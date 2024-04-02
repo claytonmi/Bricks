@@ -11,54 +11,41 @@ public class ballView : MonoBehaviour
 
     private ballController _ballController;
     private ballModel _ballModel;
+
     public brickModel _brickModel;
     public SpriteState _Vida;
-    public GameObject _PainelGameOver, PainelVitoria, Vida1, Vida2, Vida3, DestinoTeleport;
-    public GameObject Brick;
+
+    public GameObject _PainelGameOver, PainelVitoria, Vida1, Vida2, Vida3, DestinoTeleport, Brick; 
+    public Text PontuacaoTexto, PontuacaoVitoria, pontuacaoGameOver;
+
+
     public int Pontuacao;
-    public Text PontuacaoTexto;
-    public Text PontuacaoVitoria;    
-   
-    public Text pontuacaoGameOver;
-  
 
+    private void Start()
+    {
+        InitializeComponents();
+        Time.timeScale = 1;
+    }
 
-    void Start()
+    private void InitializeComponents()
     {
         _ballController = GetComponent<ballController>();
         _ballModel = GetComponent<ballModel>();
-        Time.timeScale = 1;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if (collision.gameObject.tag == "Enemy")
-        {
-            brickView _brickView = collision.gameObject.GetComponent<brickView>();
-            _brickView.PerformTakeDamage(1, collision);
-          }
-        else  if (collision.gameObject.tag == "Enemy2")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4")
         {
             brickView _brickView = collision.gameObject.GetComponent<brickView>();
             _brickView.PerformTakeDamage(1, collision);
         }
-        else  if (collision.gameObject.tag == "Enemy3")
-        {
-            brickView _brickView = collision.gameObject.GetComponent<brickView>();
-            _brickView.PerformTakeDamage(1, collision);
-        }
-        else if (collision.gameObject.tag == "Enemy4")
-        {
-            brickView _brickView = collision.gameObject.GetComponent<brickView>();
-            _brickView.PerformTakeDamage(1, collision);
-        }
+
 
         if (collision.gameObject.tag == "Finish")
-        { 
+        {
             _ballModel.Speed = 0f;
             _ballModel.Power = 0f;
-
             ReiniciarFase();
         }
 
@@ -81,27 +68,23 @@ public class ballView : MonoBehaviour
 
     public void atualizaPontuacao(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        switch (collision.gameObject.tag)
         {
-            Pontuacao = Pontuacao + 10;
-            PontuacaoTexto.text = Pontuacao.ToString();
-        }
-        else if (collision.gameObject.tag == "Enemy2")
-        {
-            Pontuacao = Pontuacao + 2;
-            PontuacaoTexto.text = Pontuacao.ToString();
-        }
-        else if (collision.gameObject.tag == "Enemy3")
-        {
-            Pontuacao = Pontuacao + 5;
-            PontuacaoTexto.text = Pontuacao.ToString();
-        }
-        else if (collision.gameObject.tag == "Enemy4")
-        {
-            Pontuacao = Pontuacao + 15;
-            PontuacaoTexto.text = Pontuacao.ToString();
+            case "Enemy":
+                Pontuacao += 10;
+                break;
+            case "Enemy2":
+                Pontuacao += 2;
+                break;
+            case "Enemy3":
+                Pontuacao += 5;
+                break;
+            case "Enemy4":
+                Pontuacao += 15;
+                break;
         }
 
+        PontuacaoTexto.text = Pontuacao.ToString();
         PlayerPrefs.SetInt("PontuacaoMaxima", Pontuacao);
         PontuacaoVitoria.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
         pontuacaoGameOver.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
@@ -111,26 +94,17 @@ public class ballView : MonoBehaviour
     public void ganhamoMae()
     {
 
-        if (GameObject.FindWithTag("Enemy") == null)
+        if (GameObject.FindWithTag("Enemy") == null && GameObject.FindWithTag("Enemy2") == null &&
+              GameObject.FindWithTag("Enemy3") == null && GameObject.FindWithTag("Enemy4") == null)
         {
-            if (GameObject.FindWithTag("Enemy2") == null)
+            if (SceneManager.GetActiveScene().name == "Fase 1")
             {
-                if (GameObject.FindWithTag("Enemy3") == null)
-                {
-                    if (GameObject.FindWithTag("Enemy4") == null)
-                    {
-
-                        if (SceneManager.GetActiveScene().name == "Fase 1")
-                        {
-                            SceneManager.LoadScene("Fase 2");
-                        }
-                        else
-                        {
-                            Time.timeScale = 0;
-                            PainelVitoria.SetActive(true);
-                        }
-                    }
-                }
+                SceneManager.LoadScene("Fase 2");
+            }
+            else
+            {
+                Time.timeScale = 0;
+                PainelVitoria.SetActive(true);
             }
         }
     }
@@ -140,13 +114,14 @@ public class ballView : MonoBehaviour
         _ballController.AngleChange(direcao);
     }
 
-    public void Sair() {
+    public void Sair()
+    {
         Application.Quit();
     }
 
     public void ReiniciarFase1()
     {
-        SceneManager.LoadScene("Fase 1");        
+        SceneManager.LoadScene("Fase 1");
     }
 
     public void ReiniciarFase2()
@@ -158,36 +133,57 @@ public class ballView : MonoBehaviour
     {
         SceneManager.LoadScene("Fase 3");
     }
-    public void VoltarMenu(){
+    public void VoltarMenu()
+    {
         SceneManager.LoadScene("Menu");
     }
 
     public void ReiniciarFase()
     {
-        if(Vida3.activeInHierarchy == true)
+        if (Vida3.activeInHierarchy || Vida2.activeInHierarchy || Vida1.activeInHierarchy)
         {
-            Vida3.SetActive(false);
-            transform.position = DestinoTeleport.transform.position;
-            _ballModel.Speed = 3f;
-            _ballModel.Power = 1f;
-        }
-        else if (Vida2.activeInHierarchy == true)
-        {
-            Vida2.SetActive(false);
-            transform.position = DestinoTeleport.transform.position;
-            _ballModel.Speed = 3f;
-            _ballModel.Power = 1f;
-        }
-        else if(Vida1.activeInHierarchy == true)
-        {
-            Vida1.SetActive(false);
-            transform.position = DestinoTeleport.transform.position;
-            _ballModel.Speed = 3f;
-            _ballModel.Power = 1f;
+            DesativarVida();
+            TransformarBola();
+            ResetarVelocidade();
         }
         else
         {
             _PainelGameOver.SetActive(true);
+        }
+    }
+
+    private void DesativarVida()
+    {
+        if (Vida3.activeInHierarchy)
+        {
+            Vida3.SetActive(false);
+        }
+        else if (Vida2.activeInHierarchy)
+        {
+            Vida2.SetActive(false);
+        }
+        else if (Vida1.activeInHierarchy)
+        {
+            Vida1.SetActive(false);
+        }
+    }
+
+    private void TransformarBola()
+    {
+        transform.position = DestinoTeleport.transform.position;
+    }
+
+    private void ResetarVelocidade()
+    {
+        if (SceneManager.GetActiveScene().name == "Fase 1")
+        {
+          _ballModel.Speed = 3f;
+          _ballModel.Power = 1f;
+        }
+        else
+        {
+          _ballModel.Speed = 4f;
+          _ballModel.Power = 2f;
         }
     }
 }

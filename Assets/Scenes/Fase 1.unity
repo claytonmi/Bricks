@@ -2730,8 +2730,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464697644}
   m_LocalRotation: {x: -0, y: -0, z: 0.2569846, w: 0.9664155}
-  m_LocalPosition: {x: 0.59, y: -4.62, z: 10}
-  m_LocalScale: {x: 11.816535, y: 0.45885837, z: 0.99212617}
+  m_LocalPosition: {x: 0.507, y: -4.581, z: 10}
+  m_LocalScale: {x: 11.553232, y: 0.832105, z: 0.99212617}
   m_Children: []
   m_Father: {fileID: 1903602934}
   m_RootOrder: 47
@@ -5403,8 +5403,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980761931}
   m_LocalRotation: {x: -0.0010944344, y: 0.01732749, z: -0.25707722, w: 0.966235}
-  m_LocalPosition: {x: -0.77, y: -4.51, z: 10}
-  m_LocalScale: {x: 11.816535, y: 0.45885837, z: 0.99212617}
+  m_LocalPosition: {x: -0.715, y: -4.455, z: 9.999}
+  m_LocalScale: {x: 11.71381, y: 0.83648425, z: 0.99212617}
   m_Children: []
   m_Father: {fileID: 1903602934}
   m_RootOrder: 48
@@ -5798,11 +5798,10 @@ MonoBehaviour:
   Vida3: {fileID: 825241232}
   DestinoTeleport: {fileID: 1606832564}
   Brick: {fileID: 0}
-  Pontuacao: 0
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
-  NomeSena: {fileID: 0}
   pontuacaoGameOver: {fileID: 276029995}
+  Pontuacao: 0
 --- !u!114 &1070373535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6839,11 +6838,10 @@ MonoBehaviour:
   Vida3: {fileID: 825241232}
   DestinoTeleport: {fileID: 1606832564}
   Brick: {fileID: 0}
-  Pontuacao: 0
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
-  NomeSena: {fileID: 0}
   pontuacaoGameOver: {fileID: 276029995}
+  Pontuacao: 0
 --- !u!114 &1312029197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8501,11 +8499,10 @@ MonoBehaviour:
   Vida3: {fileID: 825241232}
   DestinoTeleport: {fileID: 1606832564}
   Brick: {fileID: 0}
-  Pontuacao: 0
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
-  NomeSena: {fileID: 0}
   pontuacaoGameOver: {fileID: 276029995}
+  Pontuacao: 0
 --- !u!1 &1588340699
 GameObject:
   m_ObjectHideFlags: 0
@@ -11073,7 +11070,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.05
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -11171,11 +11168,10 @@ MonoBehaviour:
   Vida3: {fileID: 825241232}
   DestinoTeleport: {fileID: 1606832564}
   Brick: {fileID: 0}
-  Pontuacao: 0
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
-  NomeSena: {fileID: 0}
   pontuacaoGameOver: {fileID: 276029995}
+  Pontuacao: 0
 --- !u!114 &2107113349
 MonoBehaviour:
   m_ObjectHideFlags: 0

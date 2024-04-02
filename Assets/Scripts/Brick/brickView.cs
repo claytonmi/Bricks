@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class brickView : MonoBehaviour
 {
-    // Start is called before the first frame update
+	// Start is called before the first frame update
 	private brickController _brickController;
-	
+
     void Start()
     {
-        _brickController = GetComponent<brickController>();
-		
+        InitializeComponents();
     }
-	
+
+    private void InitializeComponents()
+    {
+        _brickController = GetComponent<brickController>();
+        if (_brickController == null)
+        {
+            Debug.LogError("BrickController não encontrado em " + gameObject.name);
+        }
+    }
+
 	public void PerformTakeDamage(float damage, Collision2D collision)
 	{
-		_brickController.TakeDamage(damage,collision);
+		_brickController.TakeDamage(damage, collision);
 	}
-
-	
-
 }
