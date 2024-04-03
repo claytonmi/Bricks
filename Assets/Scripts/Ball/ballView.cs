@@ -25,6 +25,19 @@ public class ballView : MonoBehaviour
     {
         InitializeComponents();
         Time.timeScale = 1;
+        // Definindo o texto inicial como zero
+        if (PontuacaoTexto != null)
+        {
+            PontuacaoTexto.text = "0";
+        }
+        if (PontuacaoVitoria != null)
+        {
+            PontuacaoVitoria.text = "0";
+        }
+        if (pontuacaoGameOver != null)
+        {
+            pontuacaoGameOver.text = "0";
+        }
     }
 
     private void InitializeComponents()
@@ -68,48 +81,64 @@ public class ballView : MonoBehaviour
 
     public void atualizaPontuacao(Collision2D collision)
     {
-        switch (collision.gameObject.tag)
+        if (collision.gameObject != null)
         {
-            case "Enemy":
-                Pontuacao += 10;
-                break;
-            case "Enemy2":
-                Pontuacao += 2;
-                break;
-            case "Enemy3":
-                Pontuacao += 5;
-                break;
-            case "Enemy4":
-                Pontuacao += 15;
-                break;
-        }
+            switch (collision.gameObject.tag)
+            {
+                case "Enemy":
+                    Pontuacao += 10;
+                    break;
+                case "Enemy2":
+                    Pontuacao += 2;
+                    break;
+                case "Enemy3":
+                    Pontuacao += 5;
+                    break;
+                case "Enemy4":
+                    Pontuacao += 15;
+                    break;
+            }
 
-        PontuacaoTexto.text = Pontuacao.ToString();
-        PlayerPrefs.SetInt("PontuacaoMaxima", Pontuacao);
-        PontuacaoVitoria.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
-        pontuacaoGameOver.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
-        Debug.Log(PlayerPrefs.GetInt("PontuacaoMaxima"));
+            PontuacaoTexto.text = Pontuacao.ToString();
+            PlayerPrefs.SetInt("PontuacaoMaxima", Pontuacao);
+            PontuacaoVitoria.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
+            pontuacaoGameOver.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
+            Debug.Log(PlayerPrefs.GetInt("PontuacaoMaxima"));
+        }
+        else
+        {
+            Debug.LogWarning("Collision object is null");
+        }
     }
 
     public void ganhamoMae()
     {
+        bool noEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length == 0 &&
+                         GameObject.FindGameObjectsWithTag("Enemy2").Length == 0 &&
+                         GameObject.FindGameObjectsWithTag("Enemy3").Length == 0 &&
+                         GameObject.FindGameObjectsWithTag("Enemy4").Length == 0;
 
-        if (GameObject.FindWithTag("Enemy") == null && GameObject.FindWithTag("Enemy2") == null &&
-              GameObject.FindWithTag("Enemy3") == null && GameObject.FindWithTag("Enemy4") == null)
+        if (noEnemies)
         {
-            if (SceneManager.GetActiveScene().name == "Fase 1")
+            string activeSceneName = SceneManager.GetActiveScene().name;
+
+            switch (activeSceneName)
             {
-                SceneManager.LoadScene("Fase 2");
-            }
-            else
-            {
-                Time.timeScale = 0;
-                PainelVitoria.SetActive(true);
+                case "Fase 1":
+                    SceneManager.LoadScene("Fase 2");
+                    break;
+                case "Fase 2":
+                    SceneManager.LoadScene("Fase 3");
+                    break;
+                default:
+                    Time.timeScale = 0;
+                    PainelVitoria.SetActive(true);
+                    break;
             }
         }
     }
 
-    public void PerformAngleChange(Vector2 direcao)
+        public void PerformAngleChange(Vector2 direcao)
     {
         _ballController.AngleChange(direcao);
     }
@@ -175,15 +204,20 @@ public class ballView : MonoBehaviour
 
     private void ResetarVelocidade()
     {
-        if (SceneManager.GetActiveScene().name == "Fase 1")
+
+        switch (SceneManager.GetActiveScene().name)
         {
-          _ballModel.Speed = 3f;
-          _ballModel.Power = 1f;
+            case "Fase 1":
+                _ballModel.Speed = 3f;
+                break;
+            case "Fase 2":
+                _ballModel.Speed = 4f;
+                break;
+            default:
+                _ballModel.Speed = 5f;
+                break;
         }
-        else
-        {
-          _ballModel.Speed = 4f;
-          _ballModel.Power = 2f;
-        }
+
+        _ballModel.Power = 1f;
     }
 }

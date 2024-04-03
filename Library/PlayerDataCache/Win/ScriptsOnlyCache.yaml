@@ -917,4 +917,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Fase 2.unity
   - Assets/Scenes/Fase 3.unity
   - Assets/Scenes/Informacoes.unity
-  playerPath: E:/Brinks Game Clayton/Bricks.exe
+  playerPath: E:/Brinks Game/Bricks.exe

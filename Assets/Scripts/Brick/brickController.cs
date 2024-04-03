@@ -17,24 +17,55 @@ public class brickController : MonoBehaviour
     private void InitializeComponents()
     {
         _brickModel = GetComponent<brickModel>();
+        if (_brickModel == null)
+        {
+            Debug.LogError("brickModel não foi encontrado em " + gameObject.name);
+        }
+
         scriptBallView = FindObjectOfType<ballView>();
+        if (scriptBallView == null)
+        {
+            Debug.LogError("ballView não foi encontrada em " + gameObject.name);
+        }
     }
 
     public void TakeDamage(float damage, Collision2D collision)
     {
-        _brickModel.Health -= damage;
-        if (_brickModel.Health <= 0)
+        if (_brickModel != null)
         {
-            switch (collision.gameObject.tag)
+            _brickModel.Health -= damage;
+            if (_brickModel.Health <= 0)
             {
-                case "Enemy":
-                case "Enemy2":
-                case "Enemy3":
-                case "Enemy4":
-                    scriptBallView.atualizaPontuacao(collision);
-                    break;
+                if (collision != null && collision.gameObject != null)
+                {
+                    switch (collision.gameObject.tag)
+                    {
+                        case "Enemy":
+                        case "Enemy2":
+                        case "Enemy3":
+                        case "Enemy4":
+                            if (scriptBallView != null)
+                            {
+                                scriptBallView.atualizaPontuacao(collision);
+                            }
+                            else
+                            {
+                                Debug.LogWarning("scriptBallView é null em " + gameObject.name);
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("collision ou collision.gameObject é null em " + gameObject.name);
+                }
+
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("_brickModel é null em " + gameObject.name);
         }
     }
 }

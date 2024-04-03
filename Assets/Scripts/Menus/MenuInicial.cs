@@ -34,15 +34,6 @@ public class MenuInicial : MonoBehaviour
         Debug.Log(PlayerPrefs.GetString("Nome"));
     }
 
-    public void FaseDeVitoria()
-    {
-        if (TextoDoInput.text != "")
-        {
-            SalvarNome();
-            SceneManager.LoadScene("Fase 3");
-        }
-    }
-
     public void Informacoes()
     {
         SceneManager.LoadScene("Informacoes");

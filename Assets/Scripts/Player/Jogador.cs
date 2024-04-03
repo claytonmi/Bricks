@@ -10,7 +10,15 @@ public class Jogador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nomeJogador.text = PlayerPrefs.GetString("Nome");
+        if (nomeJogador != null)
+        {
+            nomeJogador.text = PlayerPrefs.GetString("Nome");
+        }
+        else
+        {
+            nomeJogador.text = "Teste";
+            Debug.LogWarning("O componente Text nomeJogador não foi atribuído corretamente no Editor Unity.");
+        }
     }
 
     // Update is called once per frame
