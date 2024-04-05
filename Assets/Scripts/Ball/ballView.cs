@@ -20,9 +20,11 @@ public class ballView : MonoBehaviour
 
 
     public int Pontuacao;
+    private bool jogoPausado = false;
 
     private void Start()
     {
+
         InitializeComponents();
         Time.timeScale = 1;
         // Definindo o texto inicial como zero
@@ -48,10 +50,12 @@ public class ballView : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4")
         {
             brickView _brickView = collision.gameObject.GetComponent<brickView>();
             _brickView.PerformTakeDamage(1, collision);
+
         }
 
 
@@ -71,7 +75,35 @@ public class ballView : MonoBehaviour
             Vector2 newBalldirection = _ballController.CalcBallAngleReflect(collision);
             PerformAngleChange(newBalldirection);
         }
+        ResetarVelocidade();
 
+    }
+
+    private void OnClick()
+    {
+
+        // Verifica se o ballController foi inicializado corretamente
+        if (_ballController != null)
+        {
+            if (jogoPausado)
+            {
+                // Chama o método para retomar a bola, passando a direção atual
+                _ballController.RetomarBola();
+            }
+            else
+            {
+                // Chama o método para pausar a bola, passando a direção atual
+                _ballController.PausarBola();
+            }
+
+            // Inverte o estado do jogo pausado
+            jogoPausado = !jogoPausado;
+        }
+        else
+        {
+            // Se o ballController não estiver inicializado corretamente, exibe um aviso
+            Debug.LogWarning("O ballController não está inicializado corretamente. Verifique se ele está anexado ao GameObject ou se o InitializeComponents() está sendo chamado.");
+        }
     }
 
     public void Update()
