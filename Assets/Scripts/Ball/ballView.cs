@@ -58,7 +58,6 @@ public class ballView : MonoBehaviour
 
         }
 
-
         if (collision.gameObject.tag == "Finish")
         {
             _ballModel.Speed = 0f;
@@ -79,29 +78,25 @@ public class ballView : MonoBehaviour
 
     }
 
-    private void OnClick()
+    public void OnClick()
     {
 
-        // Verifica se o ballController foi inicializado corretamente
         if (_ballController != null)
         {
             if (jogoPausado)
             {
-                // Chama o método para retomar a bola, passando a direção atual
+                Debug.Log(" RetomarBola");
                 _ballController.RetomarBola();
             }
             else
             {
-                // Chama o método para pausar a bola, passando a direção atual
+                Debug.Log("PauseBola: ");
                 _ballController.PausarBola();
             }
-
-            // Inverte o estado do jogo pausado
             jogoPausado = !jogoPausado;
         }
         else
         {
-            // Se o ballController não estiver inicializado corretamente, exibe um aviso
             Debug.LogWarning("O ballController não está inicializado corretamente. Verifique se ele está anexado ao GameObject ou se o InitializeComponents() está sendo chamado.");
         }
     }

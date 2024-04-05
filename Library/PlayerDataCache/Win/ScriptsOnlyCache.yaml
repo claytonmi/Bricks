@@ -396,7 +396,7 @@ ScriptsOnlyBuild:
     className: ballView
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 459f68d0a48cc83893ff247d9f18715a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: brickView
@@ -672,7 +672,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: ae241358623ff99508afcfdb21172904
+      Hash: 81f933e21d55221c65847a6cc5a79f08
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuInicial

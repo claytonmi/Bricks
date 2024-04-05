@@ -257,6 +257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &36641351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +314,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -505,6 +509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &97821408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +566,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -675,6 +683,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &100855361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +740,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1031,6 +1043,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &149366003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,7 +1100,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1201,6 +1217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &164186728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,7 +1274,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1450,6 +1470,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &200307365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1503,7 +1527,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1858,8 +1882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.91, y: 1.82}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 7.06, y: 1.86}
+  m_SizeDelta: {x: 20.600777, y: 10.525925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &251935212
 GameObject:
@@ -1909,6 +1933,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &251935215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,7 +1990,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2153,8 +2181,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.02, y: 14.52}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.48, y: 14.64}
+  m_SizeDelta: {x: 20.96814, y: 9.960114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &294801236
 GameObject:
@@ -2282,6 +2310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &335818787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2335,7 +2367,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2452,6 +2484,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &339153356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,7 +2541,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2778,6 +2814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &496653279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2831,7 +2871,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2948,6 +2988,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &499427065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,7 +3045,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3249,6 +3293,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &517033989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3479,7 +3527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572866373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -1.82, z: 10}
+  m_LocalPosition: {x: 0.073, y: -1.82, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 178628296}
@@ -3789,6 +3837,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &618790920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3842,7 +3894,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4167,6 +4219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &659283160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4220,7 +4276,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4337,6 +4393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &692052019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4390,7 +4450,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4615,6 +4675,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &742377950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4668,7 +4732,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4785,6 +4849,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &747166011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4838,7 +4906,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5033,6 +5101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &782560327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5086,7 +5158,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5281,6 +5353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &799349635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5334,7 +5410,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5451,6 +5527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &848206268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5621,6 +5701,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &875455963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5674,7 +5758,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5872,6 +5956,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &909613032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5925,7 +6013,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6388,6 +6476,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1008716706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6441,7 +6533,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6636,6 +6728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1106894451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6689,7 +6785,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6806,6 +6902,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1110140729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6859,7 +6959,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7054,6 +7154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1198357030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7107,7 +7211,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7224,6 +7328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1210972840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7277,7 +7385,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7480,6 +7588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1260176737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7533,7 +7645,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7650,6 +7762,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1260235220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7703,7 +7819,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -8409,6 +8525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1399048546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8462,7 +8582,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -8943,8 +9063,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.99, y: -13.12}
-  m_SizeDelta: {x: 25.005325, y: 20.746964}
+  m_AnchoredPosition: {x: 0.62, y: -13.01}
+  m_SizeDelta: {x: 19.09697, y: 9.474445}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1499543570
 GameObject:
@@ -8994,6 +9114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1499543573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9047,7 +9171,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -9164,6 +9288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1509348375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9217,7 +9345,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -10017,6 +10145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1704935653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10070,7 +10202,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -10345,6 +10477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1722313195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10398,7 +10534,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -10515,6 +10651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1729330253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10568,7 +10708,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -10709,8 +10849,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.89, y: 1.95}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -7.05, y: 1.94}
+  m_SizeDelta: {x: 19.09404, y: 9.607283}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1758552066
 SpriteRenderer:
@@ -11081,6 +11221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1818700652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11134,7 +11278,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -11455,8 +11599,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.39, y: 1.79}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 16.09, y: 1.83}
+  m_SizeDelta: {x: 19.15168, y: 10.299717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1892469673
 GameObject:
@@ -11506,6 +11650,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1892469676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11559,7 +11707,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -11710,7 +11858,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615901443}
+      - m_Target: {fileID: 572866375}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -11892,6 +12040,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &1979880480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11945,7 +12097,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -12343,8 +12495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.08, y: 2.02}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -16.12, y: 1.92}
+  m_SizeDelta: {x: 18.8512, y: 10.101238}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2112837671
 GameObject:
@@ -12394,6 +12546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &2112837674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12447,7 +12603,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -12564,6 +12720,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b496bff008da87e42899f35cb66f1ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick: {fileID: 21300000, guid: 623fc317512232e47a11112564a14edc, type: 3}
+  Brick2: {fileID: 21300000, guid: 466125e8acf5ace4d85715f9ed34158a, type: 3}
+  Brick3: {fileID: 21300000, guid: 7b499678634c62b43b5f5958d85a4bee, type: 3}
+  Brick4: {fileID: 21300000, guid: 988836a3bff77674fbfb478c81b0251a, type: 3}
 --- !u!114 &2142139832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12617,7 +12777,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

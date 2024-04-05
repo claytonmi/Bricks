@@ -18,16 +18,6 @@ public class ballController : MonoBehaviour
         _ballModel = GetComponent<ballModel>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
 
-        GameObject ballObject = GameObject.Find("Ball");
-        if (ballObject != null)
-        {
-            _rigidbody2D = ballObject.GetComponent<Rigidbody2D>();
-        }
-        else
-        {
-            Debug.LogError("GameObject 'Ball' não encontrado.");
-        }
-
         // Verificar se o Rigidbody2D foi encontrado
         if (_rigidbody2D != null)
         {
@@ -36,6 +26,11 @@ public class ballController : MonoBehaviour
         else
         {
             Debug.LogError("Rigidbody2D não encontrado no GameObject. Adicione um Rigidbody2D para resolver esse problema.");
+        }
+
+        if (_rigidbody2D != null)
+        {
+            direcaoAtualBola = _rigidbody2D.velocity.normalized;
         }
     }
 
@@ -70,10 +65,10 @@ public class ballController : MonoBehaviour
 
     public void PausarBola()
     {
+
         if (_rigidbody2D != null)
         {
             direcaoAtualBola = _rigidbody2D.velocity.normalized;
-
             _rigidbody2D.velocity = Vector2.zero;
             _rigidbody2D.isKinematic = true;
         }
