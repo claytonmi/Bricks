@@ -5847,6 +5847,8 @@ MonoBehaviour:
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
   pontuacaoGameOver: {fileID: 276029995}
+  BtVoltarMenu: {fileID: 0}
+  BtPausar: {fileID: 0}
   Pontuacao: 0
 --- !u!114 &1070373535
 MonoBehaviour:
@@ -5921,8 +5923,6 @@ GameObject:
   - component: {fileID: 1090965550}
   - component: {fileID: 1090965549}
   - component: {fileID: 1090965554}
-  - component: {fileID: 1090965553}
-  - component: {fileID: 1090965552}
   m_Layer: 5
   m_Name: ButtonPause
   m_TagString: Untagged
@@ -5947,7 +5947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -440.5, y: -177.9}
+  m_AnchoredPosition: {x: -309, y: -152.9}
   m_SizeDelta: {x: 131.6242, y: 25.32811}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090965549
@@ -6004,6 +6004,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1418053077}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1090965550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6041,50 +6052,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090965547}
   m_CullTransparentMesh: 0
---- !u!114 &1090965552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090965547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f89990d4fcd6346808e64f6566182f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _brickModel: {fileID: 0}
-  _Vida:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _PainelGameOver: {fileID: 687833893}
-  PainelVitoria: {fileID: 41006172}
-  Vida1: {fileID: 0}
-  Vida2: {fileID: 0}
-  Vida3: {fileID: 0}
-  DestinoTeleport: {fileID: 1606832564}
-  Brick: {fileID: 0}
-  PontuacaoTexto: {fileID: 334106780}
-  PontuacaoVitoria: {fileID: 116464081}
-  pontuacaoGameOver: {fileID: 276029995}
-  Pontuacao: 0
---- !u!114 &1090965553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090965547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20663f4f852fc284ea648ff5659d0857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _direction: {x: 0, y: 0}
-  _power: 0
-  _speed: 0
 --- !u!114 &1090965554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7059,6 +7026,7 @@ GameObject:
   - component: {fileID: 1312029193}
   - component: {fileID: 1312029196}
   - component: {fileID: 1312029197}
+  - component: {fileID: 1312029198}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7174,6 +7142,8 @@ MonoBehaviour:
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
   pontuacaoGameOver: {fileID: 276029995}
+  BtVoltarMenu: {fileID: 0}
+  BtPausar: {fileID: 0}
   Pontuacao: 0
 --- !u!114 &1312029197
 MonoBehaviour:
@@ -7188,6 +7158,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeJogador: {fileID: 1461679036}
+--- !u!114 &1312029198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312029191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf0ef0416352cc44ad5d0a70ab3a3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1314722894
 GameObject:
   m_ObjectHideFlags: 0
@@ -8851,6 +8833,8 @@ MonoBehaviour:
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
   pontuacaoGameOver: {fileID: 276029995}
+  BtVoltarMenu: {fileID: 0}
+  BtPausar: {fileID: 0}
   Pontuacao: 0
 --- !u!1 &1588340699
 GameObject:
@@ -10147,9 +10131,6 @@ GameObject:
   - component: {fileID: 1818238961}
   - component: {fileID: 1818238960}
   - component: {fileID: 1818238959}
-  - component: {fileID: 1818238963}
-  - component: {fileID: 1818238964}
-  - component: {fileID: 1818238965}
   m_Layer: 5
   m_Name: CanvaBt
   m_TagString: Untagged
@@ -10187,26 +10168,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1818238957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f89990d4fcd6346808e64f6566182f, type: 3}
+  m_Script: {fileID: 11500000, guid: e2bbf0d83315c6748832d09835b5be17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _brickModel: {fileID: 0}
-  _Vida:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _PainelGameOver: {fileID: 687833893}
-  PainelVitoria: {fileID: 41006172}
-  Vida1: {fileID: 0}
-  Vida2: {fileID: 0}
-  Vida3: {fileID: 0}
-  DestinoTeleport: {fileID: 1606832564}
-  Brick: {fileID: 0}
-  PontuacaoTexto: {fileID: 334106780}
-  PontuacaoVitoria: {fileID: 116464081}
-  pontuacaoGameOver: {fileID: 276029995}
-  Pontuacao: 0
+  TextoDoInput: {fileID: 0}
+  nomeJogador: 
+  botaoFase1: {fileID: 0}
+  botaoFase2: {fileID: 0}
+  botaoFase3: {fileID: 0}
 --- !u!114 &1818238960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10267,54 +10236,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1818238963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818238957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b2a82e03ff356418eb18a0253769a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1818238964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818238957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20663f4f852fc284ea648ff5659d0857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _direction: {x: 0, y: 0}
-  _power: 1
-  _speed: 3
---- !u!50 &1818238965
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818238957}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1861612044
 GameObject:
   m_ObjectHideFlags: 0
@@ -10633,7 +10554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -440.5, y: -210}
+  m_AnchoredPosition: {x: -309, y: -185}
   m_SizeDelta: {x: 131.62842, y: 24.027023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868411769
@@ -10680,7 +10601,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1818238959}
-        m_MethodName: VoltarMenu
+        m_MethodName: VoltaMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11875,6 +11796,8 @@ MonoBehaviour:
   PontuacaoTexto: {fileID: 334106780}
   PontuacaoVitoria: {fileID: 116464081}
   pontuacaoGameOver: {fileID: 276029995}
+  BtVoltarMenu: {fileID: 1868411769}
+  BtPausar: {fileID: 1090965549}
   Pontuacao: 0
 --- !u!114 &2107113349
 MonoBehaviour:

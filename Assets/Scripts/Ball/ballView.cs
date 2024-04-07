@@ -18,15 +18,19 @@ public class ballView : MonoBehaviour
     public GameObject _PainelGameOver, PainelVitoria, Vida1, Vida2, Vida3, DestinoTeleport, Brick; 
     public Text PontuacaoTexto, PontuacaoVitoria, pontuacaoGameOver;
 
+    public Button BtVoltarMenu;
+    public Button BtPausar;
 
     public int Pontuacao;
     private bool jogoPausado = false;
+    private bool botoesAtivos = true;
 
     private void Start()
     {
 
         InitializeComponents();
         Time.timeScale = 1;
+
         // Definindo o texto inicial como zero
         if (PontuacaoTexto != null)
         {
@@ -85,12 +89,10 @@ public class ballView : MonoBehaviour
         {
             if (jogoPausado)
             {
-                Debug.Log(" RetomarBola");
                 _ballController.RetomarBola();
             }
             else
             {
-                Debug.Log("PauseBola: ");
                 _ballController.PausarBola();
             }
             jogoPausado = !jogoPausado;
@@ -160,14 +162,16 @@ public class ballView : MonoBehaviour
                 default:
                     Time.timeScale = 0;
                     PainelVitoria.SetActive(true);
+                    TransformarBola();
+                    _ballController.PausarBola();
                     break;
             }
         }
     }
 
-        public void PerformAngleChange(Vector2 direcao)
+    public void PerformAngleChange(Vector2 direcao)
     {
-        _ballController.AngleChange(direcao);
+    _ballController.AngleChange(direcao);
     }
 
     public void Sair()
@@ -205,6 +209,12 @@ public class ballView : MonoBehaviour
         else
         {
             _PainelGameOver.SetActive(true);
+            TransformarBola();
+            _ballController.PausarBola();
+            if (botoesAtivos)
+            {
+                BloquearBotoes();
+            }
         }
     }
 
@@ -227,6 +237,10 @@ public class ballView : MonoBehaviour
     private void TransformarBola()
     {
         transform.position = DestinoTeleport.transform.position;
+        if (!botoesAtivos)
+        {
+            DesbloquearBotoes();
+        }
     }
 
     private void ResetarVelocidade()
@@ -246,5 +260,25 @@ public class ballView : MonoBehaviour
         }
 
         _ballModel.Power = 1f;
+    }
+
+    // Método para bloquear os botões
+    public void BloquearBotoes()
+    {
+        BtVoltarMenu.interactable = false;
+        BtPausar.interactable = false;
+        BtVoltarMenu.gameObject.SetActive(false);
+        BtPausar.gameObject.SetActive(false);
+        botoesAtivos = false;
+    }
+
+    // Método para desbloquear os botões
+    public void DesbloquearBotoes()
+    {
+        BtVoltarMenu.interactable = true;
+        BtPausar.interactable = true;
+        BtVoltarMenu.gameObject.SetActive(true);
+        BtPausar.gameObject.SetActive(true);
+        botoesAtivos = true;
     }
 }
