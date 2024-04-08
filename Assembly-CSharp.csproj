@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Player\playerController.cs" />
      <Compile Include="Assets\Scripts\Player\playerModel.cs" />
      <Compile Include="Assets\Scripts\Player\playerView.cs" />
+     <Compile Include="Assets\gameManager.cs" />
  <Reference Include="UnityEngine">
  <HintPath>E:/Unity Editor/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

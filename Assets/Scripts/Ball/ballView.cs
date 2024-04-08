@@ -11,6 +11,7 @@ public class ballView : MonoBehaviour
 
     private ballController _ballController;
     private ballModel _ballModel;
+    private gameManager _gameManager;
 
     public brickModel _brickModel;
     public SpriteState _Vida;
@@ -19,7 +20,6 @@ public class ballView : MonoBehaviour
     public Text PontuacaoTexto, PontuacaoVitoria, pontuacaoGameOver;
 
     public Button BtVoltarMenu;
-    public Button BtPausar;
 
     public int Pontuacao;
     private bool jogoPausado = false;
@@ -29,7 +29,7 @@ public class ballView : MonoBehaviour
     {
 
         InitializeComponents();
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
 
         // Definindo o texto inicial como zero
         if (PontuacaoTexto != null)
@@ -48,6 +48,7 @@ public class ballView : MonoBehaviour
 
     private void InitializeComponents()
     {
+        _gameManager = GameObject.FindObjectOfType<gameManager>();
         _ballController = GetComponent<ballController>();
         _ballModel = GetComponent<ballModel>();
     }
@@ -80,27 +81,6 @@ public class ballView : MonoBehaviour
         }
         ResetarVelocidade();
 
-    }
-
-    public void OnClick()
-    {
-
-        if (_ballController != null)
-        {
-            if (jogoPausado)
-            {
-                _ballController.RetomarBola();
-            }
-            else
-            {
-                _ballController.PausarBola();
-            }
-            jogoPausado = !jogoPausado;
-        }
-        else
-        {
-            Debug.LogWarning("O ballController não está inicializado corretamente. Verifique se ele está anexado ao GameObject ou se o InitializeComponents() está sendo chamado.");
-        }
     }
 
     public void Update()
@@ -211,10 +191,6 @@ public class ballView : MonoBehaviour
             _PainelGameOver.SetActive(true);
             TransformarBola();
             _ballController.PausarBola();
-            if (botoesAtivos)
-            {
-                BloquearBotoes();
-            }
         }
     }
 
@@ -237,15 +213,15 @@ public class ballView : MonoBehaviour
     private void TransformarBola()
     {
         transform.position = DestinoTeleport.transform.position;
-        if (!botoesAtivos)
-        {
-            DesbloquearBotoes();
-        }
+    }
+
+    public void RetomarBola()
+    {
+        _ballController.RetomarBola();
     }
 
     private void ResetarVelocidade()
     {
-
         switch (SceneManager.GetActiveScene().name)
         {
             case "Fase 1":
@@ -262,23 +238,9 @@ public class ballView : MonoBehaviour
         _ballModel.Power = 1f;
     }
 
-    // Método para bloquear os botões
-    public void BloquearBotoes()
+    public void ReiniciarBolaEJogo()
     {
-        BtVoltarMenu.interactable = false;
-        BtPausar.interactable = false;
-        BtVoltarMenu.gameObject.SetActive(false);
-        BtPausar.gameObject.SetActive(false);
-        botoesAtivos = false;
-    }
-
-    // Método para desbloquear os botões
-    public void DesbloquearBotoes()
-    {
-        BtVoltarMenu.interactable = true;
-        BtPausar.interactable = true;
-        BtVoltarMenu.gameObject.SetActive(true);
-        BtPausar.gameObject.SetActive(true);
-        botoesAtivos = true;
+        transform.position = DestinoTeleport.transform.position;
+        ResetarVelocidade();
     }
 }
