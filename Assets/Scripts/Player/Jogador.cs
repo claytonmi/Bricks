@@ -21,6 +21,11 @@ public class Jogador : MonoBehaviour
         }
     }
 
+    public string getNomePlayer()
+    {
+        return nomeJogador.text;
+    }
+
     // Update is called once per frame
     void Update()
     {

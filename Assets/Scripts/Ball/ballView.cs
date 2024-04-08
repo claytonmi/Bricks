@@ -12,6 +12,8 @@ public class ballView : MonoBehaviour
     private ballController _ballController;
     private ballModel _ballModel;
     private gameManager _gameManager;
+    private Jogador _jogador;
+    private RankingManager _RankingManager;
 
     public brickModel _brickModel;
     public SpriteState _Vida;
@@ -22,8 +24,6 @@ public class ballView : MonoBehaviour
     public Button BtVoltarMenu;
 
     public int Pontuacao;
-    private bool jogoPausado = false;
-    private bool botoesAtivos = true;
 
     private void Start()
     {
@@ -49,6 +49,8 @@ public class ballView : MonoBehaviour
     private void InitializeComponents()
     {
         _gameManager = GameObject.FindObjectOfType<gameManager>();
+        _RankingManager = GameObject.FindObjectOfType<RankingManager>();
+        _jogador = GameObject.FindObjectOfType<Jogador>();
         _ballController = GetComponent<ballController>();
         _ballModel = GetComponent<ballModel>();
     }
@@ -142,6 +144,7 @@ public class ballView : MonoBehaviour
                 default:
                     Time.timeScale = 0;
                     PainelVitoria.SetActive(true);
+                    _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), PontuacaoVitoria.text);
                     TransformarBola();
                     _ballController.PausarBola();
                     break;
@@ -189,6 +192,7 @@ public class ballView : MonoBehaviour
         else
         {
             _PainelGameOver.SetActive(true);
+            _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), pontuacaoGameOver.text);
             TransformarBola();
             _ballController.PausarBola();
         }
