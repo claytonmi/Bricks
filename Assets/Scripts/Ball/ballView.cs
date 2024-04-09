@@ -27,10 +27,7 @@ public class ballView : MonoBehaviour
 
     private void Start()
     {
-
         InitializeComponents();
-        //Time.timeScale = 1;
-
         // Definindo o texto inicial como zero
         if (PontuacaoTexto != null)
         {

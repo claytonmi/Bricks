@@ -43,9 +43,8 @@ public class RankingManager : MonoBehaviour
     }
 
     // Método para adicionar uma nova entrada ao ranking
-    public void AdicionarAoRanking(string nomeJogador, string pontuacao)
+    public void AdicionarAoRanking(string nomeJogador, string novaPontuacao)
     {
-        
         // Verifica se o arquivo existe
         if (!File.Exists(filePath))
         {
@@ -71,19 +70,15 @@ public class RankingManager : MonoBehaviour
                 jogadorEncontrado = true;
 
                 // Obtém a pontuação atual do jogador na linha
-                string pontuacaoAtual = dadosJogador[1].Trim();
+                int pontuacaoAtual = int.Parse(dadosJogador[1].Trim());
 
-                // Verifica se a nova pontuação é maior que a pontuação atual
-                if (string.Compare(pontuacao, pontuacaoAtual) > 0)
-                {
-                    // Atualiza a pontuação do jogador com a nova pontuação
-                    linhas[i] = nomeJogador + "= " + pontuacao;
-                    Debug.Log("Pontuação atualizada para o jogador " + nomeJogador + "= " + pontuacao);
-                }
-                else
-                {
-                    Debug.Log("A pontuação do jogador " + nomeJogador + " não foi atualizada, pois é menor ou igual à pontuação existente.");
-                }
+                // Calcula a nova pontuação somando a pontuação atual com a nova pontuação
+                int novaPontuacaoInt = int.Parse(novaPontuacao);
+                int pontuacaoFinal = pontuacaoAtual + novaPontuacaoInt;
+
+                // Atualiza a pontuação do jogador com a nova pontuação
+                linhas[i] = nomeJogador + "= " + pontuacaoFinal;
+                Debug.Log("Pontuação atualizada para o jogador " + nomeJogador + "= " + pontuacaoFinal);
 
                 // Sai do loop, pois o jogador já foi encontrado e processado
                 break;
@@ -93,9 +88,9 @@ public class RankingManager : MonoBehaviour
         // Se o jogador não foi encontrado, adiciona uma nova linha para o jogador com sua pontuação
         if (!jogadorEncontrado)
         {
-            // Adiciona o jogador ao ranking
-            linhas.Add(nomeJogador + "= " + pontuacao);
-            Debug.Log("Novo jogador adicionado ao ranking: " + nomeJogador + "= " + pontuacao);
+            // Adiciona o jogador ao ranking com a nova pontuação
+            linhas.Add(nomeJogador + "= " + novaPontuacao);
+            Debug.Log("Novo jogador adicionado ao ranking: " + nomeJogador + "= " + novaPontuacao);
         }
 
         // Reescreve todo o conteúdo do arquivo com as linhas atualizadas
