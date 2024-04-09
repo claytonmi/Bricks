@@ -10,12 +10,23 @@ public class ballController : MonoBehaviour
     private ballModel _ballModel;
     private Rigidbody2D _rigidbody2D;
     private Vector2 direcaoAtualBola; // Variável para armazenar a direção atual da bola
+    public float _velocidade;
 
 
     void Start()
     {
         _ballModel = GetComponent<ballModel>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        
+        if (PlayerPrefs.HasKey("BallSpeed"))
+        {
+            _velocidade = PlayerPrefs.GetFloat("BallSpeed");
+        }
+        else
+        {
+            _velocidade = 3f; // Defina um valor padrão caso a velocidade da bola não esteja definida no PlayerPrefs
+        }
+        _ballModel.Speed = _velocidade;
         if (_rigidbody2D != null)
         {
             _rigidbody2D.velocity = (_ballModel.Direction * _ballModel.Speed);
@@ -77,24 +88,16 @@ public class ballController : MonoBehaviour
         if (_rigidbody2D != null)
         {
             _rigidbody2D.isKinematic = false;
-
-            switch (SceneManager.GetActiveScene().name)
-            {
-                case "Fase 1":
-                    _ballModel.Speed = 3f;
-                    break;
-                case "Fase 2":
-                    _ballModel.Speed = 4f;
-                    break;
-                default:
-                    _ballModel.Speed = 5f;
-                    break;
-            }
-            _rigidbody2D.velocity = (direcaoAtualBola * _ballModel.Speed);
+            _rigidbody2D.velocity = (direcaoAtualBola * VelicidadeDaBola());
         }
         else
         {
             Debug.LogWarning("Rigidbody2D não encontrado no GameObject 'Ball'. Não é possível retomar a bola.");
         }
+    }
+
+    public float VelicidadeDaBola()
+    {
+        return _velocidade; 
     }
 }

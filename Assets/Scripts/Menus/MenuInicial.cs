@@ -8,10 +8,20 @@ public class MenuInicial : MonoBehaviour
 {
 
     public Text TextoDoInput;
+    public InputField TextoInput;
     public string nomeJogador;
     public Button botaoFase1;
     public Button botaoFase2;
     public Button botaoFase3;
+    public Button btNovoJogo;
+    public Button btConfiguracao;
+    public Button btInfo;
+    public Button btSair;
+    public GameObject panelConfiguracao;
+
+    public Button botaoFacil;
+    public Button botaoMedio;
+    public Button botaoDificil;
 
     public Text TextRank1;
     public Text TextRank2;
@@ -19,6 +29,8 @@ public class MenuInicial : MonoBehaviour
     public Text TextRank4;
     public Text TextRank5;
     public Text TextRank6;
+
+    public float ballSpeed = 3f;
 
     private RankingManager rankingManager;
 
@@ -32,6 +44,19 @@ public class MenuInicial : MonoBehaviour
         else
         {
             Debug.LogError("RankingManager não encontrado na cena.");
+        }
+        TextoInput.gameObject.SetActive(true);
+        btNovoJogo.gameObject.SetActive(true);
+        btInfo.gameObject.SetActive(true);
+        btConfiguracao.gameObject.SetActive(true);
+        btSair.gameObject.SetActive(true);
+
+        botaoFacil.gameObject.SetActive(false);
+        botaoMedio.gameObject.SetActive(false);
+        botaoDificil.gameObject.SetActive(false);
+        if (PlayerPrefs.HasKey("BallSpeed"))
+        {
+            ballSpeed = PlayerPrefs.GetFloat("BallSpeed");
         }
     }
     void AtualizarRanking()
@@ -65,10 +90,9 @@ public class MenuInicial : MonoBehaviour
         TextRank6.text = (linhas.Length > 6) ? linhas[6] : "";
     }
 
-
+    
     public void ChamaFase()
     {
-        
         if (TextoDoInput.text == "Test")
         {
             botaoFase1.gameObject.SetActive(true);
@@ -78,13 +102,41 @@ public class MenuInicial : MonoBehaviour
         }
         else if (TextoDoInput.text != "")
         {
+            SalvarNome();
+            TextoInput.gameObject.SetActive(false);
             botaoFase1.gameObject.SetActive(false);
             botaoFase2.gameObject.SetActive(false);
             botaoFase3.gameObject.SetActive(false);
-            SalvarNome();
-            SceneManager.LoadScene("Fase 1");
+
+            btNovoJogo.gameObject.SetActive(false);
+            btInfo.gameObject.SetActive(false);
+            btConfiguracao.gameObject.SetActive(false);
+            btSair.gameObject.SetActive(false);
+
+
+            botaoFacil.gameObject.SetActive(true);
+            botaoMedio.gameObject.SetActive(true);
+            botaoDificil.gameObject.SetActive(true);
         }
-        
+    }
+
+    public void BotaoFacil_Click()
+    {
+
+        setBallSpeed(3f);
+        IniciarFase1();
+    }
+
+    public void BotaoMedio_Click()
+    {
+        setBallSpeed(4f);
+        IniciarFase1();
+    }
+
+    public void BotaoDificil_Click()
+    {
+        setBallSpeed(6f);
+        IniciarFase1();
     }
 
     public void Sair()
@@ -113,19 +165,48 @@ public class MenuInicial : MonoBehaviour
 
     public void IniciarFase1()
     {
-        SalvarNome();
+        
         SceneManager.LoadScene("Fase 1");
     }
 
     public void IniciarFase2()
     {
-        SalvarNome();
+        ballSpeed = 4f;
         SceneManager.LoadScene("Fase 2");
     }
 
     public void IniciarFase3()
     {
-        SalvarNome();
+        ballSpeed = 4f;
         SceneManager.LoadScene("Fase 3");
+    }
+
+    public void IniciarFase4()
+    {
+        ballSpeed = 4f;
+        SceneManager.LoadScene("Fase 4");
+    }
+
+    public void setBallSpeed(float velocidade)
+    {
+        ballSpeed = velocidade;
+        PlayerPrefs.SetFloat("BallSpeed", ballSpeed);
+
+    }
+
+    public void Configuracao()
+    {
+        panelConfiguracao.gameObject.SetActive(true);
+        TextoInput.interactable = false;
+        btNovoJogo.interactable = false;
+        btInfo.interactable = false;
+        btConfiguracao.interactable = false;
+        btSair.interactable = false;
+    }
+
+
+    public float getBallSpeed()
+    {
+        return ballSpeed;
     }
 }

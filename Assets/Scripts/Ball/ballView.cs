@@ -22,6 +22,8 @@ public class ballView : MonoBehaviour
     public Text PontuacaoTexto, PontuacaoVitoria, pontuacaoGameOver;
 
     public Button BtVoltarMenu;
+    private AudioSource audioSource;
+    private bool primeiraColisao = true;
 
     public int Pontuacao;
 
@@ -41,6 +43,9 @@ public class ballView : MonoBehaviour
         {
             pontuacaoGameOver.text = "0";
         }
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.enabled = false;
     }
 
     private void InitializeComponents()
@@ -59,7 +64,6 @@ public class ballView : MonoBehaviour
         {
             brickView _brickView = collision.gameObject.GetComponent<brickView>();
             _brickView.PerformTakeDamage(1, collision);
-
         }
 
         if (collision.gameObject.tag == "Finish")
@@ -78,6 +82,17 @@ public class ballView : MonoBehaviour
             Vector2 newBalldirection = _ballController.CalcBallAngleReflect(collision);
             PerformAngleChange(newBalldirection);
         }
+
+        if (primeiraColisao)
+        {
+            audioSource.enabled = true;
+            primeiraColisao = false; // Marque que a primeira colisão já ocorreu
+        }
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+
         ResetarVelocidade();
 
     }
@@ -138,6 +153,9 @@ public class ballView : MonoBehaviour
                 case "Fase 2":
                     SceneManager.LoadScene("Fase 3");
                     break;
+                case "Fase 3":
+                    SceneManager.LoadScene("Fase 4");
+                    break;
                 default:
                     Time.timeScale = 0;
                     PainelVitoria.SetActive(true);
@@ -172,6 +190,11 @@ public class ballView : MonoBehaviour
     public void ReiniciarFase3()
     {
         SceneManager.LoadScene("Fase 3");
+    }
+
+    public void ReiniciarFase4()
+    {
+        SceneManager.LoadScene("Fase 4");
     }
     public void VoltarMenu()
     {
@@ -226,16 +249,18 @@ public class ballView : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "Fase 1":
-                _ballModel.Speed = 3f;
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
             case "Fase 2":
-                _ballModel.Speed = 4f;
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
+                break;
+            case "Fase 3":
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
             default:
-                _ballModel.Speed = 5f;
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
         }
-
         _ballModel.Power = 1f;
     }
 
