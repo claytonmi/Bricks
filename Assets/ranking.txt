@@ -1,3 +1,0 @@
-Clayton= 145
-asd= 103
-Tes= 27

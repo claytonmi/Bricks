@@ -70,27 +70,43 @@ public class RankingManager : MonoBehaviour
                 jogadorEncontrado = true;
 
                 // Obtém a pontuação atual do jogador na linha
-                int pontuacaoAtual = int.Parse(dadosJogador[1].Trim());
+                int pontuacaoAtual = int.Parse(novaPontuacao);
 
-                // Calcula a nova pontuação somando a pontuação atual com a nova pontuação
-                int novaPontuacaoInt = int.Parse(novaPontuacao);
-                int pontuacaoFinal = pontuacaoAtual + novaPontuacaoInt;
+                // Obtém a pontuação final do jogador no ranking
+                int pontuacaoFinal = int.Parse(dadosJogador[1].Trim());
 
-                // Atualiza a pontuação do jogador com a nova pontuação
-                linhas[i] = nomeJogador + "= " + pontuacaoFinal;
-                Debug.Log("Pontuação atualizada para o jogador " + nomeJogador + "= " + pontuacaoFinal);
+                // Verifica se a pontuação atual é maior que a pontuação final do ranking
+                if (pontuacaoAtual > pontuacaoFinal)
+                {
+                    // Atualiza a pontuação do jogador com a nova pontuação
+                    linhas[i] = nomeJogador + "= " + pontuacaoAtual;
+                    Debug.Log("Nova pontuação atualizada para o jogador " + nomeJogador + "= " + pontuacaoAtual);
+                }
 
                 // Sai do loop, pois o jogador já foi encontrado e processado
                 break;
             }
         }
 
-        // Se o jogador não foi encontrado, adiciona uma nova linha para o jogador com sua pontuação
+        // Se o jogador não foi encontrado, adiciona uma nova entrada para o jogador
         if (!jogadorEncontrado)
         {
-            // Adiciona o jogador ao ranking com a nova pontuação
             linhas.Add(nomeJogador + "= " + novaPontuacao);
             Debug.Log("Novo jogador adicionado ao ranking: " + nomeJogador + "= " + novaPontuacao);
+        }
+
+        // Ordena o ranking com base na pontuação
+        linhas.Sort((a, b) =>
+        {
+            int pontuacaoA = int.Parse(a.Split('=')[1].Trim());
+            int pontuacaoB = int.Parse(b.Split('=')[1].Trim());
+            return pontuacaoB.CompareTo(pontuacaoA); // Ordena do maior para o menor
+        });
+
+        // Limita o ranking para as primeiras 6 entradas
+        if (linhas.Count > 6)
+        {
+            linhas = linhas.GetRange(0, 6);
         }
 
         // Reescreve todo o conteúdo do arquivo com as linhas atualizadas

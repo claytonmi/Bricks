@@ -30,18 +30,24 @@ public class ballView : MonoBehaviour
     private void Start()
     {
         InitializeComponents();
-        // Definindo o texto inicial como zero
         if (PontuacaoTexto != null)
         {
-            PontuacaoTexto.text = "0";
+            // Verifica se é a fase 1, se sim, zera a pontuação
+            if (SceneManager.GetActiveScene().name == "Fase 1")
+            {
+                PlayerPrefs.SetInt("Pontuacao", 0);
+            }
+
+            // Atualiza o texto com a pontuação atual do jogador
+            PontuacaoTexto.text = PlayerPrefs.GetInt("Pontuacao", 0).ToString();
         }
         if (PontuacaoVitoria != null)
         {
-            PontuacaoVitoria.text = "0";
+            PontuacaoVitoria.text = PlayerPrefs.GetInt("Pontuacao", 0).ToString();
         }
         if (pontuacaoGameOver != null)
         {
-            pontuacaoGameOver.text = "0";
+            pontuacaoGameOver.text = PlayerPrefs.GetInt("Pontuacao", 0).ToString();
         }
 
         audioSource = GetComponent<AudioSource>();
@@ -149,11 +155,11 @@ public class ballView : MonoBehaviour
                     break;
             }
 
+            PlayerPrefs.SetInt("Pontuacao", Pontuacao);
+
             PontuacaoTexto.text = Pontuacao.ToString();
-            PlayerPrefs.SetInt("PontuacaoMaxima", Pontuacao);
-            PontuacaoVitoria.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
-            pontuacaoGameOver.text = PlayerPrefs.GetInt("PontuacaoMaxima").ToString();
-            Debug.Log(PlayerPrefs.GetInt("PontuacaoMaxima"));
+            PontuacaoVitoria.text = Pontuacao.ToString();
+            pontuacaoGameOver.text = Pontuacao.ToString();
         }
         else
         {
@@ -240,6 +246,30 @@ public class ballView : MonoBehaviour
         else
         {
             _PainelGameOver.SetActive(true);
+            AudioSource gameOverAudioSource = _PainelGameOver.GetComponent<AudioSource>(); // Obtendo o componente AudioSource do GameObject
+            if (gameOverAudioSource != null)
+            {
+                if (PlayerPrefs.HasKey("Muted"))
+                {
+                    bool muted = PlayerPrefs.GetInt("Muted") == 1;
+                    gameOverAudioSource.mute = muted;
+                }
+                else
+                {
+                    gameOverAudioSource.mute = true;
+                }
+
+                if (PlayerPrefs.HasKey("Volume"))
+                {
+                    float volume = PlayerPrefs.GetFloat("Volume");
+                    gameOverAudioSource.volume = volume;
+                }
+                else
+                {
+                    gameOverAudioSource.volume = 1f;
+                }
+            }
+
             _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), pontuacaoGameOver.text);
             TransformarBola();
             _ballController.PausarBola();
