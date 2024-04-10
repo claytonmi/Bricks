@@ -18,29 +18,41 @@ public class ConfiguracaoAudio : MonoBehaviour
 
     private void Start()
     {
-        // Inicialize o estado dos elementos de UI com base nas configurações de áudio atuais
-        toggleMudo.isOn = audioSource.mute;
-        sliderVolume.value = audioSource.volume * 10f;
-        mutado = true;
+        // Se não retornou de uma fase, define o volume máximo e som ligado
+        if (!PlayerPrefs.HasKey("RetornouDaFase"))
+        {
+            mutado = false; // Som ligado
+            audioSource.volume = 1f; // Volume máximo
+            PlayerPrefs.SetInt("Muted", mutado ? 1 : 0); // Salva o estado do som nos PlayerPrefs
+            PlayerPrefs.SetFloat("Volume", 1f); // Salva o volume nos PlayerPrefs                                                
+            toggleMudo.isOn = audioSource.mute;
+            sliderVolume.value = audioSource.volume;
+        }
+        else // Se retornou de uma fase, carrega as configurações dos PlayerPrefs
+        {
+             // Carrega o estado do som dos PlayerPrefs
+            audioSource.mute = PlayerPrefs.GetInt("Muted") == 1;
+            audioSource.volume = PlayerPrefs.GetFloat("Volume", 1f); // Carrega o volume dos PlayerPrefs
+            toggleMudo.isOn = audioSource.mute;
+            sliderVolume.value = audioSource.volume;
+        }
     }
 
     public void SetMute()
     {
-        if (mutado)
-        {
-            audioSource.mute = mutado;
-            mutado = false;
-        }
-        else
-        {
-            audioSource.mute = mutado;
-            mutado = true;
-        }
+        mutado = !mutado; // Inverte o estado de mutado
+
+        audioSource.mute = mutado;
+
+        PlayerPrefs.SetInt("Muted", mutado ? 1 : 0); // Salva o estado do som nos PlayerPrefs
+        PlayerPrefs.Save();
     }
 
     public void SetVolume()
     {
         audioSource.volume = sliderVolume.value;
+        PlayerPrefs.SetFloat("Volume", sliderVolume.value);
+        PlayerPrefs.Save();
     }
 
     public void FecharConfig()

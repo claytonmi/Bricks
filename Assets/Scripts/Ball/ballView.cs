@@ -45,6 +45,33 @@ public class ballView : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();
+
+        // Verifica se as chaves de PlayerPrefs existem
+        if (PlayerPrefs.HasKey("Muted"))
+        {
+           
+            bool muted = PlayerPrefs.GetInt("Muted")==1;
+            Debug.Log("Entrou no Muted"+ muted);
+            audioSource.mute = muted;
+        }
+        else
+        {
+            Debug.Log("Não entrou no Muted");
+            audioSource.mute = true;
+        }
+
+        if (PlayerPrefs.HasKey("Volume"))
+        {
+         
+            float volume = PlayerPrefs.GetFloat("Volume");
+            Debug.Log("Entrou no volume"+ volume);
+            audioSource.volume = volume;
+        }
+        else
+        {
+            Debug.Log("Não entrou no volume");
+            audioSource.volume = 1f;
+        }
         audioSource.enabled = false;
     }
 
@@ -198,6 +225,7 @@ public class ballView : MonoBehaviour
     }
     public void VoltarMenu()
     {
+        PlayerPrefs.SetInt("RetornouDaFase", 1);
         SceneManager.LoadScene("Menu");
     }
 

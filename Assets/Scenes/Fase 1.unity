@@ -10494,8 +10494,10 @@ MonoBehaviour:
   botaoFase2: {fileID: 0}
   botaoFase3: {fileID: 0}
   btNovoJogo: {fileID: 0}
+  btConfiguracao: {fileID: 0}
   btInfo: {fileID: 0}
   btSair: {fileID: 0}
+  panelConfiguracao: {fileID: 0}
   botaoFacil: {fileID: 0}
   botaoMedio: {fileID: 0}
   botaoDificil: {fileID: 0}
@@ -12056,8 +12058,10 @@ MonoBehaviour:
   botaoFase2: {fileID: 0}
   botaoFase3: {fileID: 0}
   btNovoJogo: {fileID: 0}
+  btConfiguracao: {fileID: 0}
   btInfo: {fileID: 0}
   btSair: {fileID: 0}
+  panelConfiguracao: {fileID: 0}
   botaoFacil: {fileID: 0}
   botaoMedio: {fileID: 0}
   botaoDificil: {fileID: 0}

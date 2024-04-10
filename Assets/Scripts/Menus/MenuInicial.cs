@@ -160,7 +160,8 @@ public class MenuInicial : MonoBehaviour
 
     public void VoltaMenu()
     {
-         SceneManager.LoadScene("Menu");        
+        PlayerPrefs.SetInt("RetornouDaFase", 1);
+        SceneManager.LoadScene("Menu");        
     }
 
     public void IniciarFase1()
