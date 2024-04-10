@@ -26,7 +26,7 @@ Teclado: Movimenta a plataforma horizontalmente.
 Contribuições são bem-vindas! Se você encontrar problemas ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue neste repositório.
 
 ### 📋 Créditos
-Desenvolvido por Clayton, Lianna
+Desenvolvido inicialmente por Clayton e Lianna. Versões posteriores do projeto foram realizadas por Clayton.
 
 ### 📜 Licença
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](https://github.com/claytonmi/Bricks/blob/main/LICENSE.txt) para obter mais detalhes.
