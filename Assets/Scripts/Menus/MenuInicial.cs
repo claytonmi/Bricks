@@ -18,6 +18,8 @@ public class MenuInicial : MonoBehaviour
     public Button btInfo;
     public Button btSair;
     public GameObject panelConfiguracao;
+    public ConfigManager configManager;
+
 
     public Button botaoFacil;
     public Button botaoMedio;
@@ -36,6 +38,16 @@ public class MenuInicial : MonoBehaviour
 
     void Start()
     {
+        if (configManager != null)
+        {
+            // Aplica as configurações de tela salvas
+            bool isFullscreen = configManager.GetFullscreen();
+            Screen.fullScreen = isFullscreen;
+            int width = configManager.GetResolutionWidth();
+            int height = configManager.GetResolutionHeight();
+            Screen.SetResolution(width, height, isFullscreen);
+        }
+
         rankingManager = FindObjectOfType<RankingManager>();
         if (rankingManager != null)
         {
@@ -58,7 +70,10 @@ public class MenuInicial : MonoBehaviour
         {
             ballSpeed = PlayerPrefs.GetFloat("BallSpeed");
         }
+
+  
     }
+
     void AtualizarRanking()
     {
         // Verifica se o RankingManager está configurado corretamente

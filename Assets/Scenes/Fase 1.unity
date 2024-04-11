@@ -10595,6 +10595,7 @@ MonoBehaviour:
   btInfo: {fileID: 0}
   btSair: {fileID: 0}
   panelConfiguracao: {fileID: 0}
+  configManager: {fileID: 0}
   botaoFacil: {fileID: 0}
   botaoMedio: {fileID: 0}
   botaoDificil: {fileID: 0}
@@ -12159,6 +12160,7 @@ MonoBehaviour:
   btInfo: {fileID: 0}
   btSair: {fileID: 0}
   panelConfiguracao: {fileID: 0}
+  configManager: {fileID: 0}
   botaoFacil: {fileID: 0}
   botaoMedio: {fileID: 0}
   botaoDificil: {fileID: 0}
