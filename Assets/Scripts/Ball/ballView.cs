@@ -25,6 +25,8 @@ public class ballView : MonoBehaviour
     private AudioSource audioSource;
     private bool primeiraColisao = true;
 
+    private int pontuacaoInicialFase;
+
     public int Pontuacao;
 
     private void Start()
@@ -40,6 +42,9 @@ public class ballView : MonoBehaviour
 
             // Atualiza o texto com a pontuação atual do jogador
             PontuacaoTexto.text = PlayerPrefs.GetInt("Pontuacao", 0).ToString();
+            // Carrega a pontuação inicial da fase
+            pontuacaoInicialFase = PlayerPrefs.GetInt("Pontuacao", 0);
+
         }
         if (PontuacaoVitoria != null)
         {
@@ -88,46 +93,55 @@ public class ballView : MonoBehaviour
         _jogador = GameObject.FindObjectOfType<Jogador>();
         _ballController = GetComponent<ballController>();
         _ballModel = GetComponent<ballModel>();
+
+        if (_RankingManager == null)
+        {
+            Debug.LogError("Erro: _RankingManager não foi inicializado corretamente.");
+        }
+
+        if (_ballController == null)
+        {
+            Debug.LogError("Erro: _ballController não foi inicializado corretamente.");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4")
-        {
-            brickView _brickView = collision.gameObject.GetComponent<brickView>();
-            _brickView.PerformTakeDamage(1, collision);
-        }
 
-        if (collision.gameObject.tag == "Finish")
-        {
-            _ballModel.Speed = 0f;
-            _ballModel.Power = 0f;
-            ReiniciarFase();
-        }
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3" || collision.gameObject.tag == "Enemy4")
+            {
+                brickView _brickView = collision.gameObject.GetComponent<brickView>();
+                _brickView.PerformTakeDamage(1, collision);
+            }
 
-        if (collision.gameObject.tag != "Player")
-        {
-            _ballController.PerfectAngleReflect(collision);
-        }
-        else
-        {
-            Vector2 newBalldirection = _ballController.CalcBallAngleReflect(collision);
-            PerformAngleChange(newBalldirection);
-        }
+            if (collision.gameObject.tag == "Finish")
+            {
+                _ballModel.Speed = 0f;
+                _ballModel.Power = 0f;
+                ReiniciarFase();
+            }
 
-        if (primeiraColisao)
-        {
-            audioSource.enabled = true;
-            primeiraColisao = false; // Marque que a primeira colisão já ocorreu
-        }
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
+            if (collision.gameObject.tag != "Player")
+            {
+                _ballController.PerfectAngleReflect(collision);
+            }
+            else
+            {
+                Vector2 newBalldirection = _ballController.CalcBallAngleReflect(collision);
+                PerformAngleChange(newBalldirection);
+            }
 
-        ResetarVelocidade();
+            if (primeiraColisao)
+            {
+                audioSource.enabled = true;
+                primeiraColisao = false; // Marque que a primeira colisão já ocorreu
+            }
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
 
+            ResetarVelocidade();
     }
 
     public void Update()
@@ -137,6 +151,8 @@ public class ballView : MonoBehaviour
 
     public void atualizaPontuacao(Collision2D collision)
     {
+        Pontuacao = PlayerPrefs.GetInt("Pontuacao", 0);
+
         if (collision.gameObject != null)
         {
             switch (collision.gameObject.tag)
@@ -155,11 +171,24 @@ public class ballView : MonoBehaviour
                     break;
             }
 
+            Debug.Log("Pontuação está: " + Pontuacao + " e o PlayerPrefs: " + PlayerPrefs.GetInt("Pontuacao", 0));
             PlayerPrefs.SetInt("Pontuacao", Pontuacao);
 
-            PontuacaoTexto.text = Pontuacao.ToString();
-            PontuacaoVitoria.text = Pontuacao.ToString();
-            pontuacaoGameOver.text = Pontuacao.ToString();
+            // Atualiza os textos com o novo valor da pontuação
+            if (PontuacaoTexto != null)
+            {
+                PontuacaoTexto.text = Pontuacao.ToString();
+            }
+
+            if (PontuacaoVitoria != null)
+            {
+                PontuacaoVitoria.text = Pontuacao.ToString();
+            }
+
+            if (pontuacaoGameOver != null)
+            {
+                pontuacaoGameOver.text = Pontuacao.ToString();
+            }
         }
         else
         {
@@ -169,6 +198,7 @@ public class ballView : MonoBehaviour
 
     public void ganhamoMae()
     {
+
         bool noEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length == 0 &&
                          GameObject.FindGameObjectsWithTag("Enemy2").Length == 0 &&
                          GameObject.FindGameObjectsWithTag("Enemy3").Length == 0 &&
@@ -189,12 +219,20 @@ public class ballView : MonoBehaviour
                 case "Fase 3":
                     SceneManager.LoadScene("Fase 4");
                     break;
+                case "Fase 4":
+                    SceneManager.LoadScene("Fase 5");
+                    break;
                 default:
-                    Time.timeScale = 0;
-                    PainelVitoria.SetActive(true);
-                    _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), PontuacaoVitoria.text);
-                    TransformarBola();
-                    _ballController.PausarBola();
+                        PainelVitoria.SetActive(true);
+                    if (_RankingManager != null)
+                    {
+                        _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), PontuacaoVitoria.text);
+                    }
+                    else
+                    {
+                        Debug.LogError("Erro: _RankingManager  não foi inicializado corretamente.");
+                    }                                          
+                    TransformarBola();                   
                     break;
             }
         }
@@ -210,25 +248,18 @@ public class ballView : MonoBehaviour
         Application.Quit();
     }
 
-    public void ReiniciarFase1()
+    public void ReiniciarFaseAtual()
     {
-        SceneManager.LoadScene("Fase 1");
+        string activeSceneName = SceneManager.GetActiveScene().name;
+
+        // Reseta a pontuação para a pontuação inicial da fase
+        PlayerPrefs.SetInt("Pontuacao", pontuacaoInicialFase);
+        PontuacaoTexto.text = pontuacaoInicialFase.ToString();
+
+        // Recarrega a cena da fase atual
+        SceneManager.LoadScene(activeSceneName);
     }
 
-    public void ReiniciarFase2()
-    {
-        SceneManager.LoadScene("Fase 2");
-    }
-
-    public void ReiniciarFase3()
-    {
-        SceneManager.LoadScene("Fase 3");
-    }
-
-    public void ReiniciarFase4()
-    {
-        SceneManager.LoadScene("Fase 4");
-    }
     public void VoltarMenu()
     {
         PlayerPrefs.SetInt("RetornouDaFase", 1);
@@ -313,6 +344,9 @@ public class ballView : MonoBehaviour
                 _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
             case "Fase 3":
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
+                break;
+            case "Fase 4":
                 _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
             default:
