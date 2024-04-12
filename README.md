@@ -27,6 +27,7 @@ Contribuições são bem-vindas! Se você encontrar problemas ou tiver sugestõe
 
 ### 📋 Créditos
 Desenvolvido inicialmente por [Lianna](https://github.com/LiannaAragoni) e Clayton.
+
 Versões posteriores do projeto foram realizadas por Clayton.
 
 ### 📜 Licença
