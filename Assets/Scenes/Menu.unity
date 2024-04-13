@@ -3686,7 +3686,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -4216,7 +4216,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -4294,7 +4294,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -4984,7 +4984,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -5374,7 +5374,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -5566,8 +5566,6 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: 1024 x 768
       m_Image: {fileID: 0}
-    - m_Text: 854 x 480
-      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5681,7 +5679,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -5839,8 +5837,8 @@ GameObject:
   - component: {fileID: 1393986482}
   - component: {fileID: 1393986477}
   - component: {fileID: 1393986476}
-  - component: {fileID: 1393986479}
   - component: {fileID: 1393986480}
+  - component: {fileID: 1393986479}
   - component: {fileID: 1393986481}
   - component: {fileID: 1393986478}
   - component: {fileID: 1393986483}
@@ -5918,7 +5916,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -6090,7 +6088,7 @@ MonoBehaviour:
   sliderVolume: {fileID: 766560672}
   audioSource: {fileID: 1393986478}
   panelConfiguracao: {fileID: 1866484666}
-  mutado: 0
+  mutado: 1
   btNovoJogo: {fileID: 308011911}
   btInfo: {fileID: 224724375}
   btConfiguracao: {fileID: 398223217}

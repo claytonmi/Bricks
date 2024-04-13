@@ -28,6 +28,7 @@ public class ballView : MonoBehaviour
     private int pontuacaoInicialFase;
 
     public int Pontuacao;
+    public int pontuacaoVitoriaInt, pontuacaoGameOverInt;
 
     private void Start()
     {
@@ -222,11 +223,29 @@ public class ballView : MonoBehaviour
                 case "Fase 4":
                     SceneManager.LoadScene("Fase 5");
                     break;
+                case "Fase 5":
+                    SceneManager.LoadScene("Fase 6");
+                    break;
+                case "Fase 6":
+                    SceneManager.LoadScene("Fase 7");
+                    break;
+                case "Fase 7":
+                    SceneManager.LoadScene("Fase 8");
+                    break;
                 default:
                         PainelVitoria.SetActive(true);
                     if (_RankingManager != null)
                     {
-                        _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), PontuacaoVitoria.text);
+                        if (int.TryParse(PontuacaoVitoria.text, out pontuacaoVitoriaInt))
+                        {
+                            // A conversão foi bem-sucedida, agora você pode usar a variável pontuacaoVitoriaInt
+                            _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), pontuacaoVitoriaInt);
+                        }
+                        else
+                        {
+                            // A conversão falhou, lide com isso aqui
+                            Debug.LogError("Não foi possível converter a pontuação para um número inteiro.");
+                        }
                     }
                     else
                     {
@@ -301,7 +320,17 @@ public class ballView : MonoBehaviour
                 }
             }
 
-            _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), pontuacaoGameOver.text);
+            if (int.TryParse(pontuacaoGameOver.text, out pontuacaoGameOverInt))
+            {
+                // A conversão foi bem-sucedida, agora você pode usar a variável pontuacaoGameOverInt
+                _RankingManager.AdicionarAoRanking(_jogador.getNomePlayer(), pontuacaoGameOverInt);
+            }
+            else
+            {
+                // A conversão falhou, lide com isso aqui
+                Debug.LogError("Não foi possível converter a pontuação para um número inteiro.");
+            }
+
             TransformarBola();
             _ballController.PausarBola();
         }
@@ -349,6 +378,15 @@ public class ballView : MonoBehaviour
             case "Fase 4":
                 _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
+            case "Fase 5":
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
+                break;
+            case "Fase 6":
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
+                break;
+            case "Fase 7":
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
+                break;
             default:
                 _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
@@ -358,7 +396,8 @@ public class ballView : MonoBehaviour
 
     public void ReiniciarBolaEJogo()
     {
-        transform.position = DestinoTeleport.transform.position;
+        TransformarBola();
         ResetarVelocidade();
+        _ballController.ReiniciarFisicaBola();
     }
 }

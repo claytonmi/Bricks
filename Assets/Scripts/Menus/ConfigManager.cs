@@ -18,8 +18,7 @@ public class ConfigManager : MonoBehaviour
         new Resolution { width = 1920, height = 1080 },
         new Resolution { width = 1366, height = 768 },
         new Resolution { width = 1280, height = 720 },
-        new Resolution { width = 1024, height = 768 },
-        new Resolution { width = 854, height = 480 }
+        new Resolution { width = 1024, height = 768 }
     };
 
     void Start()
@@ -28,16 +27,18 @@ public class ConfigManager : MonoBehaviour
         fullscreenDropdown.value = GetFullscreen() ? 0 : 1;
         resolutionDropdown.ClearOptions();
         List<string> resolutionOptions = new List<string>();
+        int currentResolutionIndex = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
             resolutionOptions.Add(resolutions[i].width + "x" + resolutions[i].height);
             if (resolutions[i].width == GetResolutionWidth() && resolutions[i].height == GetResolutionHeight())
             {
-                resolutionDropdown.value = i;
+                currentResolutionIndex = i;
             }
         }
         resolutionDropdown.AddOptions(resolutionOptions);
 
+        resolutionDropdown.value = currentResolutionIndex;
         // Aplica as configurações salvas
         ApplyScreenSettings();
     }

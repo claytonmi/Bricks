@@ -100,4 +100,14 @@ public class ballController : MonoBehaviour
     {
         return _velocidade; 
     }
+
+    public void ReiniciarFisicaBola()
+    {
+        if (_rigidbody2D != null)
+        {
+            _rigidbody2D.velocity = (_ballModel.Direction * _ballModel.Speed); // Reseta a velocidade linear
+            _rigidbody2D.angularVelocity = 0f; // Reseta a velocidade angular
+            _rigidbody2D.gravityScale = 0f; // Reseta a gravidade (se aplicável)
+        }
+    }
 }

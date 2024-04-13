@@ -49,14 +49,7 @@ public class MenuInicial : MonoBehaviour
         }
 
         rankingManager = FindObjectOfType<RankingManager>();
-        if (rankingManager != null)
-        {
-            AtualizarRanking();
-        }
-        else
-        {
-            Debug.LogError("RankingManager não encontrado na cena.");
-        }
+  
         TextoInput.gameObject.SetActive(true);
         btNovoJogo.gameObject.SetActive(true);
         btInfo.gameObject.SetActive(true);
@@ -71,10 +64,18 @@ public class MenuInicial : MonoBehaviour
             ballSpeed = PlayerPrefs.GetFloat("BallSpeed");
         }
 
-  
+        if (rankingManager != null)
+        {
+            AtualizarRanking();
+        }
+        else
+        {
+            Debug.LogError("RankingManager não encontrado na cena.");
+        }
+
     }
 
-    void AtualizarRanking()
+    public void AtualizarRanking()
     {
         // Verifica se o RankingManager está configurado corretamente
         if (rankingManager == null)
@@ -82,30 +83,50 @@ public class MenuInicial : MonoBehaviour
             Debug.LogError("RankingManager não encontrado.");
             return;
         }
-        rankingManager.StartGame();
-        // Obter o ranking do RankingManager
-        string ranking = rankingManager.LerRanking();
+
+        // Obtém a lista de entradas de ranking do RankingManager
+        List<(string, string)> rankingEntries = rankingManager.LerRankingJson();
 
         // Verifica se o ranking foi lido corretamente
-        if (string.IsNullOrEmpty(ranking))
+        if (rankingEntries == null || rankingEntries.Count == 0)
         {
             Debug.LogWarning("Ranking vazio ou não encontrado.");
             return;
         }
 
-        // Dividir o ranking em linhas
-        string[] linhas = ranking.Split('\n');
-
-        // Preencher os Textos com as linhas do ranking
-        TextRank1.text = (linhas.Length > 1) ? linhas[1] : "";
-        TextRank2.text = (linhas.Length > 2) ? linhas[2] : "";
-        TextRank3.text = (linhas.Length > 3) ? linhas[3] : "";
-        TextRank4.text = (linhas.Length > 4) ? linhas[4] : "";
-        TextRank5.text = (linhas.Length > 5) ? linhas[5] : "";
-        TextRank6.text = (linhas.Length > 6) ? linhas[6] : "";
+        // Atualiza os campos de texto com os dados do ranking
+        for (int i = 0; i < rankingEntries.Count && i < 6; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    TextRank1.text = $"{rankingEntries[i].Item1}= {rankingEntries[i].Item2}";
+                    break;
+                case 1:
+                    TextRank2.text = $"{rankingEntries[i].Item1}= {rankingEntries[i].Item2}";
+                    break;
+                case 2:
+                    TextRank3.text = $"{rankingEntries[i].Item1}= {rankingEntries[i].Item2}";
+                    break;
+                case 3:
+                    TextRank4.text = $"{rankingEntries[i].Item1}= {rankingEntries[i].Item2}";
+                    break;
+                case 4:
+                    TextRank5.text = $"{rankingEntries[i].Item1}= {rankingEntries[i].Item2}";
+                    break;
+                case 5:
+                    TextRank6.text = $"{rankingEntries[i].Item1}= {rankingEntries[i].Item2}";
+                    break;
+            }
+        }
     }
 
-    
+    string FormatRankingEntry((string, string) entry)
+    {
+        // Formata a entrada do ranking como uma string para exibição
+        return string.Format("{0}: {1}", entry.Item1, entry.Item2);
+    }
+
     public void ChamaFase()
     {
         if (TextoDoInput.text == "Test")

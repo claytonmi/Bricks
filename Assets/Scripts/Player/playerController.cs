@@ -23,8 +23,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     public void Move(float h)
     {
-		if ((_playerTransform.position.x >= -1.45f && h < 0f) ||
-		   (_playerTransform.position.x <= 1.45f && h > 0f))
+		if ((_playerTransform.position.x >= -1.43f && h < 0f) ||
+		   (_playerTransform.position.x <= 1.43f && h > 0f))
 		{
 			_playerTransform.Translate(_playerModel.Speed * h,0f,0f);
 		}

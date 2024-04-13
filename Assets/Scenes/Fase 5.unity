@@ -218,6 +218,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 2135184933}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &16512229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,7 +1144,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 172553e0d6ec63c449c3f2b0f57d40dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b65c0920c81e17a4596f4ef70bbd5fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1327,7 +1329,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 172553e0d6ec63c449c3f2b0f57d40dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b65c0920c81e17a4596f4ef70bbd5fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1643,6 +1645,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 2135184933}
   BtVoltarMenu: {fileID: 306118740}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!82 &248106562
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5177,6 +5181,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 2135184933}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &703967616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6572,7 +6578,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 22d7bd8a138e8744ea4fd93a4e086a90, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6867,6 +6873,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 2135184933}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &924014221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7272,6 +7280,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 2135184933}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &980919462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11684,7 +11694,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 172553e0d6ec63c449c3f2b0f57d40dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b65c0920c81e17a4596f4ef70bbd5fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

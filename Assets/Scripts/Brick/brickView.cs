@@ -39,7 +39,7 @@ public class brickView : MonoBehaviour
         {
             case "Enemy2":
                 // Defina a imagem do SpriteRenderer para o sprite do enemy1
-                _spriteRenderer.sprite = Brick;
+                _spriteRenderer.sprite = Brick4;
                 break;
             case "Enemy":
                 // Alterne entre as imagens para o enemy2

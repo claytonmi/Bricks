@@ -3331,6 +3331,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &457899941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5569,6 +5571,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 0}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &812665339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7554,7 +7558,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 172553e0d6ec63c449c3f2b0f57d40dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b65c0920c81e17a4596f4ef70bbd5fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8166,6 +8170,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 1369807703}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &1320277827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9184,6 +9190,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!50 &1373250232
 Rigidbody2D:
   serializedVersion: 4
@@ -9965,6 +9973,8 @@ MonoBehaviour:
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 0}
   Pontuacao: 0
+  pontuacaoVitoriaInt: 0
+  pontuacaoGameOverInt: 0
 --- !u!114 &1487598700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11823,7 +11833,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 172553e0d6ec63c449c3f2b0f57d40dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b65c0920c81e17a4596f4ef70bbd5fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13299,7 +13309,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 172553e0d6ec63c449c3f2b0f57d40dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b65c0920c81e17a4596f4ef70bbd5fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
