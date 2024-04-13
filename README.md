@@ -9,7 +9,7 @@ Sistema de pontuação para acompanhar o desempenho do jogador em cada fase.
 ### 📥 Instalação
 Para jogar Bricks, siga estas etapas simples:
 
-Faça o download do arquivo de instalação do jogo em [LINK DE DOWNLOAD](https://github.com/claytonmi/Bricks/raw/main/dist/BrinksGame.rar)
+Faça o download do arquivo de instalação do jogo em [LINK DE DOWNLOAD](https://github.com/claytonmi/Bricks/raw/main/dist/InstallBricksGame.exe)
 
 Inicie o jogo com o arquivo Bricks.exe e divirta-se!
 
@@ -27,6 +27,7 @@ Contribuições são bem-vindas! Se você encontrar problemas ou tiver sugestõe
 
 ### 📋 Créditos
 Desenvolvido inicialmente por [Lianna](https://github.com/LiannaAragoni) e Clayton.
+
 Versões posteriores do projeto foram realizadas por Clayton.
 
 ### 📜 Licença
