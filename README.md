@@ -30,5 +30,7 @@ Desenvolvido inicialmente por [Lianna](https://github.com/LiannaAragoni) e Clayt
 
 Versões posteriores do projeto foram realizadas por Clayton.
 
+A arte em pixel foi elaborada por [Daru](https://twitter.com/PixelDaru).
+
 ### 📜 Licença
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](https://github.com/claytonmi/Bricks/blob/main/LICENSE.txt) para obter mais detalhes.
