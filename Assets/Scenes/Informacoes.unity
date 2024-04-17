@@ -454,7 +454,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextoDoInput: {fileID: 0}
+  TextoInput: {fileID: 0}
   nomeJogador: 
+  botaoFase1: {fileID: 0}
+  botaoFase2: {fileID: 0}
+  botaoFase3: {fileID: 0}
+  btNovoJogo: {fileID: 0}
+  btConfiguracao: {fileID: 0}
+  btInfo: {fileID: 0}
+  btSair: {fileID: 0}
+  panelConfiguracao: {fileID: 0}
+  configManager: {fileID: 0}
+  botaoFacil: {fileID: 0}
+  botaoMedio: {fileID: 0}
+  botaoDificil: {fileID: 0}
+  TextRank1: {fileID: 0}
+  TextRank2: {fileID: 0}
+  TextRank3: {fileID: 0}
+  TextRank4: {fileID: 0}
+  TextRank5: {fileID: 0}
+  TextRank6: {fileID: 0}
+  ballSpeed: 3
 --- !u!1 &712298220
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,12 +544,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1 - Objetivo do jogo \xE9 quebrar todos os blocos coloridos da tela.\n\n2
-    - Ao quebrar os blocos o jogador marcara pontos.\n\n3 - Cada cor de bloco tem
-    uma pontua\xE7\xE3o como vermelho 15 pontos, \nverde 2 pontos, amarelo 5 pontos
-    e azul 10 pontos.\n\n4 - Cada jogador tem tr\xEAs vidas para tentar quebrar todos
-    os blocos\n caso essas vidas acabem GAME OVER.\n\n\n\nDesenvolvemos este jogo
-    com o objetivo principal de \nproporcionar uma experi\xEAncia educativa e envolvente.\n\n"
+  m_Text: "1 - O objetivo do jogo \xE9 eliminar todos os blocos coloridos da tela.\r\n\r\n2
+    - Cada vez que um bloco \xE9 eliminado, o jogador ganha pontos, \nos quais s\xE3o
+    associados ao nome do jogador.\r\n\r\n3 - Cada cor de bloco corresponde a uma
+    pontua\xE7\xE3o diferente: verde vale 2 pontos,\n amarelo vale 5 pontos, azul
+    vale 10 pontos e vermelho vale 15 pontos.\n\r\n4 - O jogador disp\xF5e de tr\xEAs
+    vidas para tentar eliminar todos os blocos; caso essas\n vidas se esgotem, \xE9
+    GAME OVER e inicia novamente a fase atual.\r\n\r\n\n\n\n\nDesenvolvemos este
+    jogo com o objetivo principal de oferecer \numa experi\xEAncia educativa e envolvente.\n\n"
 --- !u!222 &712298223
 CanvasRenderer:
   m_ObjectHideFlags: 0

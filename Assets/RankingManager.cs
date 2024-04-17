@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using System;
 using System.IO;
 using UnityEngine;
@@ -164,10 +165,13 @@ public class RankingManager : MonoBehaviour
             }
             else
             {
+                string macAddress = GetMacAddress();
+                string idJson ="940204C";
+                Debug.Log("Estou aqui com o MAC:" + macAddress);
                 // Se o jogador não existir, adiciona um novo jogador ao ranking
                 Jogador novoJogador = new Jogador
                 {
-                    ID = nomeJogador + DateTime.Now.ToString("ddMMyyHHmm"),
+                    ID = idJson + macAddress + nomeJogador,
                     nome = nomeJogador,
                     rank = novaPontuacao,
                     Data = DateTime.Now.ToString("dd/MM/yyyy"),
@@ -204,6 +208,23 @@ public class RankingManager : MonoBehaviour
             // Salva o ranking atualizado
             SalvarRanking(rankingData);
         }
+    }
+
+    private string GetMacAddress()
+    {
+        NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+        string macAddress = "";
+
+        foreach (NetworkInterface nic in nics)
+        {
+            if (nic.OperationalStatus == OperationalStatus.Up)
+            {
+                macAddress = nic.GetPhysicalAddress().ToString();
+                break;
+            }
+        }
+
+        return macAddress;
     }
 }
 
