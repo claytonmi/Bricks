@@ -15,6 +15,7 @@ public class MenuInicial : MonoBehaviour
     public Button botaoFase3;
     public Button btNovoJogo;
     public Button btConfiguracao;
+    public Button BtClassificacao;
     public Button btInfo;
     public Button btSair;
     public GameObject panelConfiguracao;
@@ -35,6 +36,7 @@ public class MenuInicial : MonoBehaviour
     public float ballSpeed = 3f;
 
     private RankingManager rankingManager;
+    private JSONUploader _JSONuploader;
 
     void Start()
     {
@@ -49,11 +51,12 @@ public class MenuInicial : MonoBehaviour
         }
 
         rankingManager = FindObjectOfType<RankingManager>();
-  
+
         TextoInput.gameObject.SetActive(true);
         btNovoJogo.gameObject.SetActive(true);
         btInfo.gameObject.SetActive(true);
         btConfiguracao.gameObject.SetActive(true);
+        BtClassificacao.gameObject.SetActive(true);
         btSair.gameObject.SetActive(true);
 
         botaoFacil.gameObject.SetActive(false);
@@ -147,6 +150,7 @@ public class MenuInicial : MonoBehaviour
             btNovoJogo.gameObject.SetActive(false);
             btInfo.gameObject.SetActive(false);
             btConfiguracao.gameObject.SetActive(false);
+            BtClassificacao.gameObject.SetActive(false);
             btSair.gameObject.SetActive(false);
 
 
@@ -177,6 +181,7 @@ public class MenuInicial : MonoBehaviour
 
     public void Sair()
     {
+        salvarClassificao();
         Application.Quit();
     }
 
@@ -231,6 +236,22 @@ public class MenuInicial : MonoBehaviour
 
     }
 
+    public void AbrirClassificaoWeb()
+    {
+        string url = "http://leilamd.com.br/";
+
+        // Verifica se a URL é válida
+        if (!string.IsNullOrEmpty(url))
+        {
+            // Abre a página web no navegador padrão
+            Application.OpenURL(url);
+        }
+        else
+        {
+            Debug.LogWarning("URL inválida!"); // Avisa no console se a URL for inválida
+        }
+    }
+
     public void Configuracao()
     {
         panelConfiguracao.gameObject.SetActive(true);
@@ -238,6 +259,7 @@ public class MenuInicial : MonoBehaviour
         btNovoJogo.interactable = false;
         btInfo.interactable = false;
         btConfiguracao.interactable = false;
+        BtClassificacao.interactable = false;
         btSair.interactable = false;
     }
 
@@ -245,5 +267,11 @@ public class MenuInicial : MonoBehaviour
     public float getBallSpeed()
     {
         return ballSpeed;
+    }
+    
+    public void salvarClassificao()
+    {
+        _JSONuploader = FindObjectOfType<JSONUploader>();
+        _JSONuploader.UploadJSON();
     }
 }
