@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using UnityEngine;
 using System.Linq;
-
+using System.Text;
 
 public class RankingManager : MonoBehaviour
 {
@@ -83,7 +83,8 @@ public class RankingManager : MonoBehaviour
         try
         {
             string json = JsonUtility.ToJson(rankingData);
-            File.WriteAllText(filePath, json);
+            string hex = ConverterParaHexadecimal(json);
+            File.WriteAllText(filePath, hex);
             Debug.Log("Arquivo JSON criado com sucesso em: " + filePath);
         }
         catch (IOException e)
@@ -95,7 +96,8 @@ public class RankingManager : MonoBehaviour
     public void SalvarRanking(RankingData rankingData)
     {
         string json = JsonUtility.ToJson(rankingData);
-        File.WriteAllText(filePath, json);
+        string hex = ConverterParaHexadecimal(json);
+        File.WriteAllText(filePath, hex);
         Debug.Log("Arquivo JSON do ranking salvo em: " + filePath);
     }
 
@@ -104,7 +106,8 @@ public class RankingManager : MonoBehaviour
     {
         try
         {
-            string json = File.ReadAllText(filePath);
+            string hex = File.ReadAllText(filePath);
+            string json = ConverterHexadecimalParaJSON(hex);
             return JsonUtility.FromJson<RankingData>(json);
         }
         catch (Exception ex)
@@ -120,7 +123,8 @@ public class RankingManager : MonoBehaviour
 
         try
         {
-            string json = File.ReadAllText(Path.Combine(Application.dataPath, "ranking.json"));
+            string hex = File.ReadAllText(Path.Combine(Application.dataPath, "ranking.json"));
+            string json = ConverterHexadecimalParaJSON(hex);
             RankingData rankingData = JsonUtility.FromJson<RankingData>(json);
             if (rankingData != null && rankingData.rankingList != null)
             {
@@ -166,7 +170,7 @@ public class RankingManager : MonoBehaviour
             else
             {
                 string macAddress = GetMacAddress();
-                string idJson ="940204C";
+                string idJson = "940204C";
                 Debug.Log("Estou aqui com o MAC:" + macAddress);
                 // Se o jogador não existir, adiciona um novo jogador ao ranking
                 Jogador novoJogador = new Jogador
@@ -226,5 +230,30 @@ public class RankingManager : MonoBehaviour
 
         return macAddress;
     }
-}
 
+    // Método para converter uma string em hexadecimal
+    static string ConverterParaHexadecimal(string input)
+    {
+        byte[] bytes = Encoding.UTF8.GetBytes(input);
+        return BitConverter.ToString(bytes).Replace("-", "");
+    }
+
+    // Método para converter uma string hexadecimal de volta para JSON
+    static string ConverterHexadecimalParaJSON(string hex)
+    {
+        try
+        {
+            byte[] bytes = new byte[hex.Length / 2];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                bytes[i] = Convert.ToByte(hex.Substring(i * 2, 2), 16);
+            }
+            return Encoding.UTF8.GetString(bytes);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Erro ao converter texto hexadecimal para JSON: " + ex.Message);
+            return null;
+        }
+    }
+}

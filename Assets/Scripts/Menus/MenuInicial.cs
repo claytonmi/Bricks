@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class MenuInicial : MonoBehaviour
 {
@@ -25,6 +28,7 @@ public class MenuInicial : MonoBehaviour
     public Button botaoFacil;
     public Button botaoMedio;
     public Button botaoDificil;
+    public Text SalvandoDados;
 
     public Text TextRank1;
     public Text TextRank2;
@@ -58,6 +62,7 @@ public class MenuInicial : MonoBehaviour
         btConfiguracao.gameObject.SetActive(true);
         BtClassificacao.gameObject.SetActive(true);
         btSair.gameObject.SetActive(true);
+        SalvandoDados.gameObject.SetActive(false);
 
         botaoFacil.gameObject.SetActive(false);
         botaoMedio.gameObject.SetActive(false);
@@ -179,9 +184,16 @@ public class MenuInicial : MonoBehaviour
         IniciarFase1();
     }
 
-    public void Sair()
+    public async void Sair()
     {
-        salvarClassificao();
+        TextoInput.interactable = false;
+        btNovoJogo.interactable = false;
+        btInfo.interactable = false;
+        btConfiguracao.interactable = false;
+        BtClassificacao.interactable = false;
+        btSair.interactable = false;
+        SalvandoDados.gameObject.SetActive(true);
+        await Task.Delay(2000);
         Application.Quit();
     }
 
@@ -269,9 +281,4 @@ public class MenuInicial : MonoBehaviour
         return ballSpeed;
     }
     
-    public void salvarClassificao()
-    {
-        _JSONuploader = FindObjectOfType<JSONUploader>();
-        _JSONuploader.UploadJSON();
-    }
 }

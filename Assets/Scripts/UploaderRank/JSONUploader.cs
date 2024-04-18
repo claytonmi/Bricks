@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.Networking;
+using System.Text;
 
 public class JSONUploader : MonoBehaviour
 {
@@ -26,6 +28,11 @@ public class JSONUploader : MonoBehaviour
             // Lê o conteúdo do arquivo JSON
             byte[] jsonBytes = File.ReadAllBytes(jsonFilePath);
 
+            // Convertendo de Hexadecimal para JSON
+            string hexContent = Encoding.UTF8.GetString(jsonBytes);
+            string jsonContent = ConverterHexadecimalParaJSON(hexContent);
+            byte[] finalJsonBytes = Encoding.UTF8.GetBytes(jsonContent);
+
             // Cria uma requisição HTTP POST
             UnityWebRequest request = new UnityWebRequest(serverURL, "POST");
 
@@ -45,11 +52,10 @@ public class JSONUploader : MonoBehaviour
             byte[] bodyEndBytes = System.Text.Encoding.UTF8.GetBytes("\r\n--" + boundary + "--\r\n");
 
             // Combina os bytes dos dados do arquivo e os bytes do corpo da requisição
-            byte[] fileBytes = File.ReadAllBytes(jsonFilePath);
-            byte[] postData = new byte[bodyStartBytes.Length + fileBytes.Length + bodyEndBytes.Length];
+            byte[] postData = new byte[bodyStartBytes.Length + finalJsonBytes.Length + bodyEndBytes.Length];
             System.Array.Copy(bodyStartBytes, postData, bodyStartBytes.Length);
-            System.Array.Copy(fileBytes, 0, postData, bodyStartBytes.Length, fileBytes.Length);
-            System.Array.Copy(bodyEndBytes, 0, postData, bodyStartBytes.Length + fileBytes.Length, bodyEndBytes.Length);
+            System.Array.Copy(finalJsonBytes, 0, postData, bodyStartBytes.Length, finalJsonBytes.Length);
+            System.Array.Copy(bodyEndBytes, 0, postData, bodyStartBytes.Length + finalJsonBytes.Length, bodyEndBytes.Length);
 
             // Configura a requisição
             request.method = UnityWebRequest.kHttpVerbPOST;
@@ -61,7 +67,6 @@ public class JSONUploader : MonoBehaviour
             request.timeout = 30;
 
             Debug.Log("Cabeçalhos da solicitação: " + request.GetRequestHeader("Content-Type"));
-
 
             // Envia a requisição para o servidor
             yield return request.SendWebRequest();
@@ -85,4 +90,24 @@ public class JSONUploader : MonoBehaviour
             Debug.LogError("Arquivo JSON não encontrado em: " + jsonFilePath);
         }
     }
+
+    static string ConverterHexadecimalParaJSON(string hex)
+    {
+        try
+        {
+            byte[] bytes = new byte[hex.Length / 2];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                int byteValue = int.Parse(hex.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
+                bytes[i] = (byte)byteValue;
+            }
+            return Encoding.UTF8.GetString(bytes);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Erro ao converter texto hexadecimal para JSON: " + ex.Message);
+            return null;
+        }
+    }
+
 }
