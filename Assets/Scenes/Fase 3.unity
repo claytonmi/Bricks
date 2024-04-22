@@ -3199,6 +3199,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 1967387671}
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -3447,7 +3452,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 687fbde68060758469b600152bd7223d, type: 3}
-  m_Color: {r: 0.031790257, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.960876, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5439,6 +5444,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 0}
   pontuacaoGameOver: {fileID: 0}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -8038,6 +8048,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 1967387671}
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 1369807703}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -9058,6 +9073,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 1967387671}
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -9841,6 +9861,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 1967387671}
   pontuacaoGameOver: {fileID: 1060323890}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0

@@ -6219,7 +6219,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -6393,7 +6393,7 @@ MonoBehaviour:
   sliderVolume: {fileID: 766560672}
   audioSource: {fileID: 1393986478}
   panelConfiguracao: {fileID: 1866484666}
-  mutado: 0
+  mutado: 1
   btNovoJogo: {fileID: 308011911}
   btInfo: {fileID: 224724375}
   btConfiguracao: {fileID: 398223217}
@@ -7892,8 +7892,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1393986479}
-        m_MethodName: salvarClassificao
+      - m_Target: {fileID: 1393986485}
+        m_MethodName: UploadJSON
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

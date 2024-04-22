@@ -1295,6 +1295,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 625715770}
   pontuacaoGameOver: {fileID: 718800665}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -1540,6 +1545,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 625715770}
   pontuacaoGameOver: {fileID: 718800665}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -8013,6 +8023,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 625715770}
   pontuacaoGameOver: {fileID: 718800665}
   BtVoltarMenu: {fileID: 395897509}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -12761,6 +12776,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 625715770}
   pontuacaoGameOver: {fileID: 718800665}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
@@ -17094,6 +17114,11 @@ MonoBehaviour:
   PontuacaoVitoria: {fileID: 625715770}
   pontuacaoGameOver: {fileID: 718800665}
   BtVoltarMenu: {fileID: 0}
+  nivelSelecionado: 
+  pontAzul: 0
+  pontVermelho: 0
+  pontAmarelo: 0
+  pontVerde: 0
   Pontuacao: 0
   pontuacaoVitoriaInt: 0
   pontuacaoGameOverInt: 0
