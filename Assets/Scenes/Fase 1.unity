@@ -10731,6 +10731,7 @@ MonoBehaviour:
   botaoFase3: {fileID: 0}
   btNovoJogo: {fileID: 0}
   btConfiguracao: {fileID: 0}
+  BtClassificacao: {fileID: 0}
   btInfo: {fileID: 0}
   btSair: {fileID: 0}
   panelConfiguracao: {fileID: 0}
@@ -10738,6 +10739,7 @@ MonoBehaviour:
   botaoFacil: {fileID: 0}
   botaoMedio: {fileID: 0}
   botaoDificil: {fileID: 0}
+  SalvandoDados: {fileID: 0}
   TextRank1: {fileID: 0}
   TextRank2: {fileID: 0}
   TextRank3: {fileID: 0}
@@ -12298,6 +12300,7 @@ MonoBehaviour:
   botaoFase3: {fileID: 0}
   btNovoJogo: {fileID: 0}
   btConfiguracao: {fileID: 0}
+  BtClassificacao: {fileID: 0}
   btInfo: {fileID: 0}
   btSair: {fileID: 0}
   panelConfiguracao: {fileID: 0}
@@ -12305,6 +12308,7 @@ MonoBehaviour:
   botaoFacil: {fileID: 0}
   botaoMedio: {fileID: 0}
   botaoDificil: {fileID: 0}
+  SalvandoDados: {fileID: 0}
   TextRank1: {fileID: 0}
   TextRank2: {fileID: 0}
   TextRank3: {fileID: 0}

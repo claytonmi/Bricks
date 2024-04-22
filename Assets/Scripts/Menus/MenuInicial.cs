@@ -167,19 +167,21 @@ public class MenuInicial : MonoBehaviour
 
     public void BotaoFacil_Click()
     {
-
+        PlayerPrefs.SetString("NivelSelecionado", "Facil");
         setBallSpeed(3f);
         IniciarFase1();
     }
 
     public void BotaoMedio_Click()
     {
+        PlayerPrefs.SetString("NivelSelecionado", "Medio");
         setBallSpeed(4f);
         IniciarFase1();
     }
 
     public void BotaoDificil_Click()
     {
+        PlayerPrefs.SetString("NivelSelecionado", "Dificil");
         setBallSpeed(6f);
         IniciarFase1();
     }

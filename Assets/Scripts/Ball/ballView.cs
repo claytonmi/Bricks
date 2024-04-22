@@ -24,8 +24,10 @@ public class ballView : MonoBehaviour
     public Button BtVoltarMenu;
     private AudioSource audioSource;
     private bool primeiraColisao = true;
+    public string nivelSelecionado;
 
     private int pontuacaoInicialFase;
+    public int pontAzul, pontVermelho, pontAmarelo, pontVerde;
 
     public int Pontuacao;
     public int pontuacaoVitoriaInt, pontuacaoGameOverInt;
@@ -54,6 +56,42 @@ public class ballView : MonoBehaviour
         if (pontuacaoGameOver != null)
         {
             pontuacaoGameOver.text = PlayerPrefs.GetInt("Pontuacao", 0).ToString();
+        }
+
+        if (PlayerPrefs.HasKey("NivelSelecionado"))
+        {
+            // Recupera o valor da chave "NivelSelecionado"
+            nivelSelecionado = PlayerPrefs.GetString("NivelSelecionado");
+
+            pontAzul = 10;
+            pontVermelho = 15;
+            pontAmarelo = 5;
+            pontVerde = 2;
+
+            if (nivelSelecionado == "Facil")
+            {
+                pontAzul = 10;
+                pontVermelho = 15;
+                pontAmarelo = 5;
+                pontVerde = 2;
+            }else if (nivelSelecionado == "Medio")
+            {
+                pontAzul = 15;
+                pontVermelho = 20;
+                pontAmarelo = 10;
+                pontVerde = 4;
+            }
+            else if(nivelSelecionado == "Dificil")
+            {
+                pontAzul = 20;
+                pontVermelho = 25;
+                pontAmarelo = 15;
+                pontVerde = 6;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Nenhum nível selecionado.");
         }
 
         audioSource = GetComponent<AudioSource>();
@@ -159,16 +197,16 @@ public class ballView : MonoBehaviour
             switch (collision.gameObject.tag)
             {
                 case "Enemy":
-                    Pontuacao += 10;
+                    Pontuacao += pontAzul;
                     break;
                 case "Enemy2":
-                    Pontuacao += 2;
+                    Pontuacao += pontVerde;
                     break;
                 case "Enemy3":
-                    Pontuacao += 5;
+                    Pontuacao += pontAmarelo;
                     break;
                 case "Enemy4":
-                    Pontuacao += 15;
+                    Pontuacao += pontVermelho;
                     break;
             }
 
