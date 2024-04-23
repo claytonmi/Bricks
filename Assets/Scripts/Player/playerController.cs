@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class playerController : MonoBehaviour
 	private Transform _playerTransform;
     private BoxCollider2D _boxCollider2D;
     private playerView _playerView;
+    private SpriteRenderer _playerSpriteRenderer;
     private bool jogoPausado = false;
 
     void Start()
@@ -17,7 +19,9 @@ public class playerController : MonoBehaviour
 		_playerTransform = GetComponent<Transform>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _playerView = GetComponent<playerView>();
+        _playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
+        SetPlayerColor();
     }
 
     // Update is called once per frame
@@ -54,6 +58,27 @@ public class playerController : MonoBehaviour
     {
         _boxCollider2D.enabled = true;
         _playerView.enabled = true;
+    }
+
+    public void SetPlayerColor(Color color)
+    {
+        _playerSpriteRenderer.color = color; // Define a cor do jogador usando o componente SpriteRenderer
+    }
+
+    public void SetPlayerColor()
+    {
+        // Verifique se há uma cor do jogador salva no PlayerPrefs
+        if (PlayerPrefs.HasKey("PlayerColorR") && PlayerPrefs.HasKey("PlayerColorG") && PlayerPrefs.HasKey("PlayerColorB"))
+        {
+            // Carregar a cor salva do PlayerPrefs
+            float r = PlayerPrefs.GetFloat("PlayerColorR");
+            float g = PlayerPrefs.GetFloat("PlayerColorG");
+            float b = PlayerPrefs.GetFloat("PlayerColorB");
+            Color playerColor = new Color(r, g, b);
+
+            // Aplicar a cor ao jogador
+            SetPlayerColor(playerColor);
+        }
     }
 
 }

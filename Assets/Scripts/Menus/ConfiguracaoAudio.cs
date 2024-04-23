@@ -66,4 +66,15 @@ public class ConfiguracaoAudio : MonoBehaviour
         BtClassificacao.interactable = true;
         btSair.interactable = true;
     }
+
+    public void FecharConfigEmJogo()
+    {
+        panelConfiguracao.gameObject.SetActive(false);
+    }
+
+    public void AbrirConfigEmJogo()
+    {
+        panelConfiguracao.gameObject.SetActive(true);
+    }
+
 }
