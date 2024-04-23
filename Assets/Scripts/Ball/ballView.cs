@@ -270,6 +270,9 @@ public class ballView : MonoBehaviour
                 case "Fase 7":
                     SceneManager.LoadScene("Fase 8");
                     break;
+                case "Fase 8":
+                    SceneManager.LoadScene("Fase 9");
+                    break;
                 default:
                         PainelVitoria.SetActive(true);
                     if (_RankingManager != null)
@@ -423,6 +426,9 @@ public class ballView : MonoBehaviour
                 _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
             case "Fase 7":
+                _ballModel.Speed = _ballController.VelicidadeDaBola();
+                break;
+            case "Fase 8":
                 _ballModel.Speed = _ballController.VelicidadeDaBola();
                 break;
             default:

@@ -7249,7 +7249,7 @@ MonoBehaviour:
   sliderVolume: {fileID: 766560672}
   audioSource: {fileID: 1393986478}
   panelConfiguracao: {fileID: 1866484666}
-  mutado: 1
+  mutado: 0
   btNovoJogo: {fileID: 308011911}
   btInfo: {fileID: 224724375}
   btConfiguracao: {fileID: 398223217}
