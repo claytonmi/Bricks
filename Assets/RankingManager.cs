@@ -13,6 +13,7 @@ public class RankingManager : MonoBehaviour
     public class Jogador
     {
         public string ID;
+        public string Dificuldade;
         public string nome;
         public int rank;
         public string Data;
@@ -176,6 +177,7 @@ public class RankingManager : MonoBehaviour
                 Jogador novoJogador = new Jogador
                 {
                     ID = idJson + macAddress + nomeJogador,
+                    Dificuldade = PlayerPrefs.GetString("NivelSelecionado"),
                     nome = nomeJogador,
                     rank = novaPontuacao,
                     Data = DateTime.Now.ToString("dd/MM/yyyy"),
