@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\ColorPlayer\ColorPicker.cs" />
      <Compile Include="Assets\Scripts\Menus\ConfigManager.cs" />
      <Compile Include="Assets\Scripts\Menus\ConfiguracaoAudio.cs" />
+     <Compile Include="Assets\Scripts\Menus\Creditos.cs" />
      <Compile Include="Assets\Scripts\Menus\MenuInicial.cs" />
      <Compile Include="Assets\Scripts\Player\Jogador.cs" />
      <Compile Include="Assets\Scripts\Player\playerController.cs" />

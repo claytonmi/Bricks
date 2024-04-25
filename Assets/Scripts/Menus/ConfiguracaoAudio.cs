@@ -12,7 +12,9 @@ public class ConfiguracaoAudio : MonoBehaviour
     public bool mutado;
     public Button btNovoJogo;
     public Button btInfo;
+    public Button btSalvarClassificacao;
     public Button btConfiguracao;
+    public Button btCreditos;
     public Button BtClassificacao;
     public Button btSair;
     public InputField TextoInput;
@@ -62,7 +64,9 @@ public class ConfiguracaoAudio : MonoBehaviour
         TextoInput.interactable = true;
         btNovoJogo.interactable = true;
         btInfo.interactable = true;
+        btSalvarClassificacao.interactable = true;
         btConfiguracao.interactable = true;
+        btCreditos.interactable = true;
         BtClassificacao.interactable = true;
         btSair.interactable = true;
     }

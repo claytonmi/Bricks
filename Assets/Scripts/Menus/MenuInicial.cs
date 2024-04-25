@@ -17,7 +17,9 @@ public class MenuInicial : MonoBehaviour
     public Button botaoFase2;
     public Button botaoFase3;
     public Button btNovoJogo;
+    public Button btSalvarClassificacao;
     public Button btConfiguracao;
+    public Button btCreditor;
     public Button BtClassificacao;
     public Button btInfo;
     public Button btSair;
@@ -59,7 +61,9 @@ public class MenuInicial : MonoBehaviour
         TextoInput.gameObject.SetActive(true);
         btNovoJogo.gameObject.SetActive(true);
         btInfo.gameObject.SetActive(true);
+        btSalvarClassificacao.gameObject.SetActive(true);
         btConfiguracao.gameObject.SetActive(true);
+        btCreditor.gameObject.SetActive(true);
         BtClassificacao.gameObject.SetActive(true);
         btSair.gameObject.SetActive(true);
         SalvandoDados.gameObject.SetActive(false);
@@ -154,7 +158,9 @@ public class MenuInicial : MonoBehaviour
 
             btNovoJogo.gameObject.SetActive(false);
             btInfo.gameObject.SetActive(false);
+            btSalvarClassificacao.gameObject.SetActive(false);
             btConfiguracao.gameObject.SetActive(false);
+            btCreditor.gameObject.SetActive(false);
             BtClassificacao.gameObject.SetActive(false);
             btSair.gameObject.SetActive(false);
 
@@ -191,7 +197,9 @@ public class MenuInicial : MonoBehaviour
         TextoInput.interactable = false;
         btNovoJogo.interactable = false;
         btInfo.interactable = false;
+        btSalvarClassificacao.interactable = false;
         btConfiguracao.interactable = false;
+        btCreditor.interactable = false;
         BtClassificacao.interactable = false;
         btSair.interactable = false;
         SalvandoDados.gameObject.SetActive(true);
@@ -217,6 +225,11 @@ public class MenuInicial : MonoBehaviour
     {
         PlayerPrefs.SetInt("RetornouDaFase", 1);
         SceneManager.LoadScene("Menu");        
+    }
+
+    public void Creditos()
+    {
+        SceneManager.LoadScene("Creditos");
     }
 
     public void IniciarFase1()
@@ -268,13 +281,16 @@ public class MenuInicial : MonoBehaviour
 
     public void Configuracao()
     {
-        panelConfiguracao.gameObject.SetActive(true);
         TextoInput.interactable = false;
         btNovoJogo.interactable = false;
         btInfo.interactable = false;
+        btSalvarClassificacao.interactable = false;
         btConfiguracao.interactable = false;
+        btCreditor.interactable = false;
         BtClassificacao.interactable = false;
         btSair.interactable = false;
+        panelConfiguracao.gameObject.SetActive(true);
+
     }
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -33,7 +34,14 @@ public class gameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
+            if (SceneManager.GetActiveScene().name == "Creditos")
+            {
+                SceneManager.LoadScene("Menu");
+            }
+            else
+            {
+                TogglePause();
+            }
         }
     }
 
@@ -42,7 +50,7 @@ public class gameManager : MonoBehaviour
         return isPaused;
     }
 
-    void TogglePause()
+    public void TogglePause()
     {
         canvaBt.SetActive(!canvaBt.activeSelf);
 

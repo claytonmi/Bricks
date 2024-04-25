@@ -16,6 +16,17 @@ public class playerView : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
-		_playerController.Move(h);		
+        if (Input.touchCount > 0)
+        {
+            // Obter o primeiro toque na tela
+            Touch touch = Input.GetTouch(0);
+
+            // Calcular a posição do toque em relação à largura da tela
+            float touchPositionX = touch.position.x / Screen.width;
+
+            // Determinar a direção do movimento com base na posição do toque
+            h += (touchPositionX < 0.5f) ? -1f : 1f;
+        }
+        _playerController.Move(h);		
     }
 }
