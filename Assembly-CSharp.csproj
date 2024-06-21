@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Menus\ConfiguracaoAudio.cs" />
      <Compile Include="Assets\Scripts\Menus\Creditos.cs" />
      <Compile Include="Assets\Scripts\Menus\MenuInicial.cs" />
+     <Compile Include="Assets\Scripts\Menus\OffensiveWords.cs" />
      <Compile Include="Assets\Scripts\Player\Jogador.cs" />
      <Compile Include="Assets\Scripts\Player\playerController.cs" />
      <Compile Include="Assets\Scripts\Player\playerModel.cs" />

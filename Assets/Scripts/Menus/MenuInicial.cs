@@ -85,6 +85,8 @@ public class MenuInicial : MonoBehaviour
             Debug.LogError("RankingManager não encontrado na cena.");
         }
 
+        TextoInput.onEndEdit.AddListener(delegate { ValidarNomeJogador(); });
+
     }
 
     public void AtualizarRanking()
@@ -141,6 +143,12 @@ public class MenuInicial : MonoBehaviour
 
     public void ChamaFase()
     {
+        if (IsNomeOfensivo(TextoDoInput.text))
+        {
+            Debug.Log("Nome ofensivo detectado. Não é possível iniciar o jogo.");
+            return;
+        }
+
         if (TextoDoInput.text == "Test")
         {
             botaoFase1.gameObject.SetActive(true);
@@ -298,5 +306,30 @@ public class MenuInicial : MonoBehaviour
     {
         return ballSpeed;
     }
-    
+
+
+    void ValidarNomeJogador()
+    {
+        string nome = TextoInput.text;
+        if (IsNomeOfensivo(nome))
+        {
+            // Limpa o campo e exibe uma mensagem de erro
+            TextoInput.text = "";
+            Debug.Log("Nome ofensivo detectado. Por favor, escolha um nome diferente.");
+            // Aqui você pode adicionar um aviso visual para o usuário
+        }
+    }
+
+    bool IsNomeOfensivo(string nome)
+    {
+        foreach (string palavra in OffensiveWords.Words)
+        {
+            if (nome.IndexOf(palavra, StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
