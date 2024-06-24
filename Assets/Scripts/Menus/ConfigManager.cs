@@ -8,9 +8,12 @@ public class ConfigManager : MonoBehaviour
     private const string FULLSCREEN_KEY = "fullscreen";
     private const string RESOLUTION_WIDTH_KEY = "resolution_width";
     private const string RESOLUTION_HEIGHT_KEY = "resolution_height";
+    private const string SENSITIVITY_KEY = "sensitivity";
 
     public Dropdown fullscreenDropdown;
     public Dropdown resolutionDropdown;
+    public Slider sensitivitySlider;
+    public Text sensitivityValueText;
 
     // Adicione as resoluções disponíveis
     private Resolution[] resolutions = new Resolution[]
@@ -39,6 +42,11 @@ public class ConfigManager : MonoBehaviour
         resolutionDropdown.AddOptions(resolutionOptions);
 
         resolutionDropdown.value = currentResolutionIndex;
+
+        sensitivitySlider.value = GetSensitivity(); // Define o valor inicial do slider
+        sensitivitySlider.onValueChanged.AddListener(OnSensitivitySliderValueChanged); // Listener para mudanças no slider
+
+        UpdateSensitivityText(sensitivitySlider.value);
         // Aplica as configurações salvas
         ApplyScreenSettings();
     }
@@ -91,5 +99,27 @@ public class ConfigManager : MonoBehaviour
     public int GetResolutionHeight()
     {
         return PlayerPrefs.GetInt(RESOLUTION_HEIGHT_KEY, 1080);
+    }
+
+    public void SetSensitivity(float sensitivity)
+    {
+        PlayerPrefs.SetFloat(SENSITIVITY_KEY, sensitivity);
+        PlayerPrefs.Save();
+    }
+
+    public float GetSensitivity()
+    {
+        return PlayerPrefs.GetFloat(SENSITIVITY_KEY, 1.0f); // Valor padrão 1.0f
+    }
+
+    public void OnSensitivitySliderValueChanged(float value)
+    {
+        SetSensitivity(value);
+        UpdateSensitivityText(value);
+    }
+
+    private void UpdateSensitivityText(float value)
+    {
+        sensitivityValueText.text = value.ToString("F2"); // Formata o valor para duas casas decimais
     }
 }

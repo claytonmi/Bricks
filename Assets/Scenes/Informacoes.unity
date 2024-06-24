@@ -264,7 +264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voltar
+  m_Text: Back
 --- !u!222 &223872930
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Dific\xEDl\n\n                     = 6\n                       = 15\n                      
+  m_Text: "Hard\n\n                     = 6\n                       = 15\n                      
     = 20\n                       = 25"
 --- !u!222 &356518735
 CanvasRenderer:
@@ -773,7 +773,9 @@ MonoBehaviour:
   botaoFase2: {fileID: 0}
   botaoFase3: {fileID: 0}
   btNovoJogo: {fileID: 0}
+  btSalvarClassificacao: {fileID: 0}
   btConfiguracao: {fileID: 0}
+  btCreditor: {fileID: 0}
   BtClassificacao: {fileID: 0}
   btInfo: {fileID: 0}
   btSair: {fileID: 0}
@@ -859,7 +861,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "F\xE1cil\n\n                   = 2  \n                   = 5  \n                  
+  m_Text: "Easy\n\n                   = 2  \n                   = 5  \n                  
     = 10\n                   = 15"
 --- !u!222 &669278610
 CanvasRenderer:
@@ -938,13 +940,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1 - O objetivo do jogo \xE9 eliminar todos os blocos coloridos da tela.\r\n\r\n2
-    - Cada vez que um bloco \xE9 eliminado, o jogador ganha pontos, \r\nos quais
-    s\xE3o associados ao nome do jogador.\r\n\r\n3 - O jogador disp\xF5e de quatro
-    vidas para tentar eliminar todos os blocos; caso essas\r\n vidas se esgotem,
-    \xE9 GAME OVER e inicia novamente a fase atual.\r\n\n4 - Cada cor de bloco corresponde
-    a uma pontua\xE7\xE3o diferente e a dificuldade\n influencia na pontua\xE7\xE3o:
-    \n\n\r\n"
+  m_Text: "1 - The goal of the game is to eliminate all the colored blocks from the
+    screen.\n\n2 - Each time a block is eliminated, the player earns points,\n which
+    are associated with the player's name.\n\n3 - The player has four lives to try
+    to eliminate all the blocks; if these lives run \nout, it's GAME OVER and the
+    current stage restarts.\n\n4 - Each block color corresponds to a different score,
+    and the difficulty \ninfluences the score:"
 --- !u!222 &712298223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1846,7 +1847,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "M\xE9dio\n\n                      = 4\n                        = 10\n                       
+  m_Text: "Medium\n\n                      = 4\n                        = 10\n                       
     = 15\n                        = 20"
 --- !u!222 &1726397210
 CanvasRenderer:

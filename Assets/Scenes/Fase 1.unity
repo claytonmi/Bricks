@@ -1749,7 +1749,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jogador
+  m_Text: Player
 --- !u!222 &197464773
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3570,7 +3570,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Vida:'
+  m_Text: "\rLife:"
 --- !u!222 &492678452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3830,6 +3830,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullscreenDropdown: {fileID: 0}
   resolutionDropdown: {fileID: 0}
+  sensitivitySlider: {fileID: 0}
+  sensitivityValueText: {fileID: 0}
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6656,7 +6658,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Jogador:'
+  m_Text: 'Player:'
 --- !u!222 &912141812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7357,7 +7359,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Salvar e sair
+  m_Text: Save and exit
 --- !u!222 &998983980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8621,7 +8623,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Configuracao
+  m_Text: Settings
 --- !u!222 &1226959474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9989,7 +9991,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resetar Bola
+  m_Text: Reset Ball
 --- !u!222 &1378742065
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10558,7 +10560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0.79999995, y: 1.64}
+  m_AnchoredPosition: {x: 0.93, y: 1.64}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1435776557
@@ -10593,7 +10595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Pontua\xE7\xE3o:"
+  m_Text: "\rScore:"
 --- !u!222 &1435776558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10749,7 +10751,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jogo Pausado
+  m_Text: Pause
 --- !u!222 &1488637316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11896,7 +11898,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cor do jogador
+  m_Text: Player color
 --- !u!222 &1637155493
 CanvasRenderer:
   m_ObjectHideFlags: 0

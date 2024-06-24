@@ -774,7 +774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resetar Bola
+  m_Text: "Reset Ball\r"
 --- !u!222 &88689359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3354,7 +3354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jogador
+  m_Text: Player
 --- !u!222 &308126327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4572,7 +4572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Vida:'
+  m_Text: 'Life:'
 --- !u!222 &402997397
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8073,7 +8073,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jogo Pausado
+  m_Text: Pause
 --- !u!222 &635736770
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10143,7 +10143,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Configuracao
+  m_Text: Settings
 --- !u!222 &856006161
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11110,7 +11110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cor do jogador
+  m_Text: Player color
 --- !u!222 &891830913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17218,7 +17218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -68.29999}
+  m_AnchoredPosition: {x: 33.3, y: -67.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1575817082
@@ -17253,7 +17253,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Pontua\xE7\xE3o:"
+  m_Text: 'Score:'
 --- !u!222 &1575817083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18964,7 +18964,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Salvar e sair
+  m_Text: Save and exit
 --- !u!222 &1849940421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21204,7 +21204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 128.3, y: -68.3}
+  m_AnchoredPosition: {x: 119.8, y: -68.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &2086945830
@@ -21624,7 +21624,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Jogador:'
+  m_Text: 'Player:'
 --- !u!222 &2118295741
 CanvasRenderer:
   m_ObjectHideFlags: 0

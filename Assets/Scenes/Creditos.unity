@@ -425,9 +425,47 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Cr\xE9ditos\r\n\nDesenvolvedores de Jogo:\r\nClayton\r\nLianna\r\n\nArtista
-    de Jogo:\r\nDaru\n\nProgramador de \xC1udio:\r\nClayton\r\n\nTestadores de Jogo:\r\nRosiel\r\nLeila\r\nGuilherme\r\nKethila\n\nDesigner
-    de N\xEDveis:\r\nClayton\r\n\nDesigner de Interface do Usu\xE1rio (UI/UX):\r\nClayton"
+  m_Text: 'Credits
+
+
+    Game Developers:
+
+    Clayton
+
+    Lianna
+
+
+    Game Artist:
+
+    Daru
+
+
+    Audio
+    Programmer:
+
+    Clayton
+
+
+    Game Testers:
+
+    Rosiel
+
+    Leila
+
+    Guilherme
+
+    Kethila
+
+
+    Level
+    Designer:
+
+    Clayton
+
+
+    User Interface (UI/UX) Designer:
+
+    Clayton'
 --- !u!222 &821463033
 CanvasRenderer:
   m_ObjectHideFlags: 0
